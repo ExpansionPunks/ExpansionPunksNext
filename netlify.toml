@@ -3,7 +3,8 @@
 [build]
   base = "webapp"
   command = "npm run build"
-  publish = "webapp/.next"
+  # Relative to base (webapp), so this is webapp/.next.
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
