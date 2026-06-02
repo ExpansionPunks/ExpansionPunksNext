@@ -1,0 +1,14 @@
+# The Next.js app lives in webapp/, not the repo root. Build it there with the
+# official Next.js runtime so SSR/routes work and an index is served.
+[build]
+  base = "webapp"
+  command = "npm run build"
+  publish = "webapp/.next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Ship stage: public narrative site, wallet + migration gated.
+  NEXT_PUBLIC_SITE_STAGE = "content"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
