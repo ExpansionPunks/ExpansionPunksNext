@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { PunkReformCanvas } from "@/components/reform/PunkReformCanvas";
+import { morphPool } from "@/lib/site-data";
 
 const MORPH_SEQUENCE_LENGTH = 6;
 
@@ -35,7 +36,7 @@ function randomTokenSequence(length: number, firstTokenId?: number) {
   const tokenIds = new Set<number>(firstTokenId ? [firstTokenId] : []);
 
   while (tokenIds.size < length) {
-    tokenIds.add(10000 + Math.floor(Math.random() * 10000));
+    tokenIds.add(morphPool[Math.floor(Math.random() * morphPool.length)]);
   }
 
   return [...tokenIds];

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PunkReformCanvas } from "@/components/reform/PunkReformCanvas";
 import { PunkImage } from "@/components/ui/PunkImage";
+import { morphPool } from "@/lib/site-data";
 
 type ClickableReformPunkProps = {
   priority?: boolean;
@@ -64,7 +65,7 @@ function randomTokenIdExcluding(excludedTokenId: number) {
   let tokenId = excludedTokenId;
 
   while (tokenId === excludedTokenId) {
-    tokenId = 10000 + Math.floor(Math.random() * 10000);
+    tokenId = morphPool[Math.floor(Math.random() * morphPool.length)];
   }
 
   return tokenId;

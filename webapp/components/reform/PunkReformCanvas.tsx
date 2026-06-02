@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { punkAsset } from "@/lib/site-data";
 
 type Point = {
   x: number;
@@ -216,7 +217,7 @@ export function PunkReformCanvas({
         className="reform-canvas"
         width={GRID_SIZE}
         height={GRID_SIZE}
-        style={!resolvedFrames ? { backgroundImage: `url("/art/punk/${fromTokenId}")` } : undefined}
+        style={!resolvedFrames ? { backgroundImage: `url("${punkAsset(fromTokenId)}")` } : undefined}
         aria-hidden={decorative || undefined}
         aria-label={decorative ? undefined : `Animated ExpansionPunk from ${fromTokenId} to ${toTokenId}`}
       />
@@ -227,7 +228,7 @@ export function PunkReformCanvas({
 }
 
 async function loadPixels(tokenId: number) {
-  const image = await loadImage(`/art/punk/${tokenId}`);
+  const image = await loadImage(punkAsset(tokenId));
   const buffer = document.createElement("canvas");
   buffer.width = GRID_SIZE;
   buffer.height = GRID_SIZE;
