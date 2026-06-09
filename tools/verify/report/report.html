@@ -1,0 +1,150 @@
+<!doctype html><html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Expansion Punks — onchain vs IPFS verification</title>
+<style>
+:root{--amber:#ffbf00;--ink:#171717;--paper:#fffaf0}
+body{font-family:ui-sans-serif,system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;color:var(--ink);background:var(--paper)}
+h1{border-bottom:6px solid var(--amber);padding-bottom:.3rem}
+table{border-collapse:collapse;margin:1rem 0}
+th,td{border:1px solid #ccc;padding:.4rem .7rem;text-align:left}
+td.num,th.num{text-align:right}
+.swatch{display:inline-flex;border:2px solid var(--ink)}
+.swatch span{width:42px;height:42px;display:inline-block}
+.big{font-size:1.4rem;font-weight:700}
+img.mask{image-rendering:pixelated;max-width:100%;border:2px solid var(--ink)}
+code{background:#eee;padding:.1rem .3rem;border-radius:3px}
+</style></head><body>
+<h1>Expansion Punks — onchain vs IPFS verification</h1>
+<p>Every punk read from the onchain Renderer and compared pixel-for-pixel against the original image the live collection references on IPFS.</p>
+<h2>Result</h2><table>
+<tr><th>Outcome</th><th class='num'>Punks</th></tr>
+<tr><td>Exact pixel match</td><td class='num'>6,085</td></tr>
+<tr><td>Visually identical (alpha rounding ≤ 8/ch)</td><td class='num'>3,915</td></tr>
+<tr><td>Structural difference</td><td class='num'>0</td></tr>
+<tr><td><b>Total</b></td><td class='num'><b>10,000</b></td></tr></table>
+<p class='big'>100.00% pixel-identical or sub-perceptual rounding.</p>
+<h2>What the rounding difference looks like</h2>
+<p>Original (left) next to onchain (right) — every distinct pair across the collection (107 in total). The off-by-one comes from compositing the semi-transparent <code>#DDDDDD80</code> over the pixels beneath it (skin, hair and other trait colours).</p>
+<table><tr><th>Original → Onchain</th><th>Hex</th><th class='num'>Δ</th><th class='num'>Pixels</th></tr>
+<tr><td><span class='swatch'><span style='background:#eece6f'></span><span style='background:#edce6e'></span></span></td><td><code>#eece6f</code> → <code>#edce6e</code></td><td class='num'>1</td><td class='num'>5,789</td></tr>
+<tr><td><span class='swatch'><span style='background:#dcbc5d'></span><span style='background:#dbbb5c'></span></span></td><td><code>#dcbc5d</code> → <code>#dbbb5c</code></td><td class='num'>1</td><td class='num'>3,464</td></tr>
+<tr><td><span class='swatch'><span style='background:#997c59'></span><span style='background:#987b59'></span></span></td><td><code>#997c59</code> → <code>#987b59</code></td><td class='num'>1</td><td class='num'>3,081</td></tr>
+<tr><td><span class='swatch'><span style='background:#4f2c14'></span><span style='background:#4e2b14'></span></span></td><td><code>#4f2c14</code> → <code>#4e2b14</code></td><td class='num'>1</td><td class='num'>2,561</td></tr>
+<tr><td><span class='swatch'><span style='background:#796144'></span><span style='background:#796143'></span></span></td><td><code>#796144</code> → <code>#796143</code></td><td class='num'>1</td><td class='num'>2,384</td></tr>
+<tr><td><span class='swatch'><span style='background:#bbb3a6'></span><span style='background:#bab2a6'></span></span></td><td><code>#bbb3a6</code> → <code>#bab2a6</code></td><td class='num'>1</td><td class='num'>1,563</td></tr>
+<tr><td><span class='swatch'><span style='background:#d4c8b8'></span><span style='background:#d3c8b7'></span></span></td><td><code>#d4c8b8</code> → <code>#d3c8b7</code></td><td class='num'>1</td><td class='num'>1,500</td></tr>
+<tr><td><span class='swatch'><span style='background:#311b0d'></span><span style='background:#301b0c'></span></span></td><td><code>#311b0d</code> → <code>#301b0c</code></td><td class='num'>1</td><td class='num'>1,488</td></tr>
+<tr><td><span class='swatch'><span style='background:#4b3c2a'></span><span style='background:#4b3b29'></span></span></td><td><code>#4b3c2a</code> → <code>#4b3b29</code></td><td class='num'>1</td><td class='num'>1,358</td></tr>
+<tr><td><span class='swatch'><span style='background:#281b09'></span><span style='background:#271a09'></span></span></td><td><code>#281b09</code> → <code>#271a09</code></td><td class='num'>1</td><td class='num'>791</td></tr>
+<tr><td><span class='swatch'><span style='background:#a49681'></span><span style='background:#a49680'></span></span></td><td><code>#a49681</code> → <code>#a49680</code></td><td class='num'>1</td><td class='num'>632</td></tr>
+<tr><td><span class='swatch'><span style='background:#b6a389'></span><span style='background:#b6a288'></span></span></td><td><code>#b6a389</code> → <code>#b6a288</code></td><td class='num'>1</td><td class='num'>608</td></tr>
+<tr><td><span class='swatch'><span style='background:#3c5659'></span><span style='background:#3c5658'></span></span></td><td><code>#3c5659</code> → <code>#3c5658</code></td><td class='num'>1</td><td class='num'>544</td></tr>
+<tr><td><span class='swatch'><span style='background:#507c33'></span><span style='background:#4f7c33'></span></span></td><td><code>#507c33</code> → <code>#4f7c33</code></td><td class='num'>1</td><td class='num'>528</td></tr>
+<tr><td><span class='swatch'><span style='background:#655e5e'></span><span style='background:#645d5d'></span></span></td><td><code>#655e5e</code> → <code>#645d5d</code></td><td class='num'>1</td><td class='num'>520</td></tr>
+<tr><td><span class='swatch'><span style='background:#5c8539'></span><span style='background:#5c8438'></span></span></td><td><code>#5c8539</code> → <code>#5c8438</code></td><td class='num'>1</td><td class='num'>512</td></tr>
+<tr><td><span class='swatch'><span style='background:#af2c7b'></span><span style='background:#af2c7a'></span></span></td><td><code>#af2c7b</code> → <code>#af2c7a</code></td><td class='num'>1</td><td class='num'>512</td></tr>
+<tr><td><span class='swatch'><span style='background:#5c736b'></span><span style='background:#5c726a'></span></span></td><td><code>#5c736b</code> → <code>#5c726a</code></td><td class='num'>1</td><td class='num'>500</td></tr>
+<tr><td><span class='swatch'><span style='background:#a32375'></span><span style='background:#a22375'></span></span></td><td><code>#a32375</code> → <code>#a22375</code></td><td class='num'>1</td><td class='num'>500</td></tr>
+<tr><td><span class='swatch'><span style='background:#dcdfea'></span><span style='background:#dcdee9'></span></span></td><td><code>#dcdfea</code> → <code>#dcdee9</code></td><td class='num'>1</td><td class='num'>494</td></tr>
+<tr><td><span class='swatch'><span style='background:#506a65'></span><span style='background:#506a64'></span></span></td><td><code>#506a65</code> → <code>#506a64</code></td><td class='num'>1</td><td class='num'>404</td></tr>
+<tr><td><span class='swatch'><span style='background:#584733'></span><span style='background:#574633'></span></span></td><td><code>#584733</code> → <code>#574633</code></td><td class='num'>1</td><td class='num'>318</td></tr>
+<tr><td><span class='swatch'><span style='background:#b7ab98'></span><span style='background:#b6aa97'></span></span></td><td><code>#b7ab98</code> → <code>#b6aa97</code></td><td class='num'>1</td><td class='num'>316</td></tr>
+<tr><td><span class='swatch'><span style='background:#cfbda6'></span><span style='background:#cebda5'></span></span></td><td><code>#cfbda6</code> → <code>#cebda5</code></td><td class='num'>1</td><td class='num'>304</td></tr>
+<tr><td><span class='swatch'><span style='background:#463827'></span><span style='background:#453726'></span></span></td><td><code>#463827</code> → <code>#453726</code></td><td class='num'>1</td><td class='num'>276</td></tr>
+<tr><td><span class='swatch'><span style='background:#2d190c'></span><span style='background:#2d190b'></span></span></td><td><code>#2d190c</code> → <code>#2d190b</code></td><td class='num'>1</td><td class='num'>274</td></tr>
+<tr><td><span class='swatch'><span style='background:#485d5d'></span><span style='background:#485c5c'></span></span></td><td><code>#485d5d</code> → <code>#485c5c</code></td><td class='num'>1</td><td class='num'>272</td></tr>
+<tr><td><span class='swatch'><span style='background:#9b166d'></span><span style='background:#9a166c'></span></span></td><td><code>#9b166d</code> → <code>#9a166c</code></td><td class='num'>1</td><td class='num'>268</td></tr>
+<tr><td><span class='swatch'><span style='background:#5d8b43'></span><span style='background:#5c8a43'></span></span></td><td><code>#5d8b43</code> → <code>#5c8a43</code></td><td class='num'>1</td><td class='num'>264</td></tr>
+<tr><td><span class='swatch'><span style='background:#6e984d'></span><span style='background:#6d974d'></span></span></td><td><code>#6e984d</code> → <code>#6d974d</code></td><td class='num'>1</td><td class='num'>256</td></tr>
+<tr><td><span class='swatch'><span style='background:#998475'></span><span style='background:#998375'></span></span></td><td><code>#998475</code> → <code>#998375</code></td><td class='num'>1</td><td class='num'>256</td></tr>
+<tr><td><span class='swatch'><span style='background:#c13f8f'></span><span style='background:#c03e8f'></span></span></td><td><code>#c13f8f</code> → <code>#c03e8f</code></td><td class='num'>1</td><td class='num'>256</td></tr>
+<tr><td><span class='swatch'><span style='background:#6e867f'></span><span style='background:#6e857f'></span></span></td><td><code>#6e867f</code> → <code>#6e857f</code></td><td class='num'>1</td><td class='num'>250</td></tr>
+<tr><td><span class='swatch'><span style='background:#b03285'></span><span style='background:#af3185'></span></span></td><td><code>#b03285</code> → <code>#af3185</code></td><td class='num'>1</td><td class='num'>250</td></tr>
+<tr><td><span class='swatch'><span style='background:#486f2b'></span><span style='background:#476e2a'></span></span></td><td><code>#486f2b</code> → <code>#476e2a</code></td><td class='num'>1</td><td class='num'>238</td></tr>
+<tr><td><span class='swatch'><span style='background:#52321a'></span><span style='background:#51311a'></span></span></td><td><code>#52321a</code> → <code>#51311a</code></td><td class='num'>1</td><td class='num'>235</td></tr>
+<tr><td><span class='swatch'><span style='background:#9b6f4d'></span><span style='background:#9a6e4c'></span></span></td><td><code>#9b6f4d</code> → <code>#9a6e4c</code></td><td class='num'>1</td><td class='num'>230</td></tr>
+<tr><td><span class='swatch'><span style='background:#af38a1'></span><span style='background:#ae38a1'></span></span></td><td><code>#af38a1</code> → <code>#ae38a1</code></td><td class='num'>1</td><td class='num'>204</td></tr>
+<tr><td><span class='swatch'><span style='background:#5d7975'></span><span style='background:#5d7875'></span></span></td><td><code>#5d7975</code> → <code>#5d7875</code></td><td class='num'>1</td><td class='num'>202</td></tr>
+<tr><td><span class='swatch'><span style='background:#b6b4bf'></span><span style='background:#b5b4bf'></span></span></td><td><code>#b6b4bf</code> → <code>#b5b4bf</code></td><td class='num'>1</td><td class='num'>200</td></tr>
+<tr><td><span class='swatch'><span style='background:#ad7e59'></span><span style='background:#ac7e59'></span></span></td><td><code>#ad7e59</code> → <code>#ac7e59</code></td><td class='num'>1</td><td class='num'>198</td></tr>
+<tr><td><span class='swatch'><span style='background:#aa7b54'></span><span style='background:#a97b53'></span></span></td><td><code>#aa7b54</code> → <code>#a97b53</code></td><td class='num'>1</td><td class='num'>193</td></tr>
+<tr><td><span class='swatch'><span style='background:#763b1a'></span><span style='background:#763a1a'></span></span></td><td><code>#763b1a</code> → <code>#763a1a</code></td><td class='num'>1</td><td class='num'>165</td></tr>
+<tr><td><span class='swatch'><span style='background:#552f16'></span><span style='background:#542f15'></span></span></td><td><code>#552f16</code> → <code>#542f15</code></td><td class='num'>1</td><td class='num'>160</td></tr>
+<tr><td><span class='swatch'><span style='background:#825032'></span><span style='background:#825031'></span></span></td><td><code>#825032</code> → <code>#825031</code></td><td class='num'>1</td><td class='num'>155</td></tr>
+<tr><td><span class='swatch'><span style='background:#6f6f6f'></span><span style='background:#6e6e6e'></span></span></td><td><code>#6f6f6f</code> → <code>#6e6e6e</code></td><td class='num'>1</td><td class='num'>146</td></tr>
+<tr><td><span class='swatch'><span style='background:#d09c6e'></span><span style='background:#d09b6e'></span></span></td><td><code>#d09c6e</code> → <code>#d09b6e</code></td><td class='num'>1</td><td class='num'>136</td></tr>
+<tr><td><span class='swatch'><span style='background:#5c915f'></span><span style='background:#5b915f'></span></span></td><td><code>#5c915f</code> → <code>#5b915f</code></td><td class='num'>1</td><td class='num'>124</td></tr>
+<tr><td><span class='swatch'><span style='background:#826849'></span><span style='background:#826848'></span></span></td><td><code>#826849</code> → <code>#826848</code></td><td class='num'>1</td><td class='num'>124</td></tr>
+<tr><td><span class='swatch'><span style='background:#da8e66'></span><span style='background:#da8d66'></span></span></td><td><code>#da8e66</code> → <code>#da8d66</code></td><td class='num'>1</td><td class='num'>121</td></tr>
+<tr><td><span class='swatch'><span style='background:#3c2413'></span><span style='background:#3b2312'></span></span></td><td><code>#3c2413</code> → <code>#3b2312</code></td><td class='num'>1</td><td class='num'>117</td></tr>
+<tr><td><span class='swatch'><span style='background:#eeeab6'></span><span style='background:#ede9b5'></span></span></td><td><code>#eeeab6</code> → <code>#ede9b5</code></td><td class='num'>1</td><td class='num'>115</td></tr>
+<tr><td><span class='swatch'><span style='background:#b66f4e'></span><span style='background:#b66f4d'></span></span></td><td><code>#b66f4e</code> → <code>#b66f4d</code></td><td class='num'>1</td><td class='num'>110</td></tr>
+<tr><td><span class='swatch'><span style='background:#4f4538'></span><span style='background:#4e4438'></span></span></td><td><code>#4f4538</code> → <code>#4e4438</code></td><td class='num'>1</td><td class='num'>107</td></tr>
+<tr><td><span class='swatch'><span style='background:#cac9d4'></span><span style='background:#c9c8d3'></span></span></td><td><code>#cac9d4</code> → <code>#c9c8d3</code></td><td class='num'>1</td><td class='num'>100</td></tr>
+<tr><td><span class='swatch'><span style='background:#645849'></span><span style='background:#635748'></span></span></td><td><code>#645849</code> → <code>#635748</code></td><td class='num'>1</td><td class='num'>93</td></tr>
+<tr><td><span class='swatch'><span style='background:#5e5757'></span><span style='background:#5d5656'></span></span></td><td><code>#5e5757</code> → <code>#5d5656</code></td><td class='num'>1</td><td class='num'>84</td></tr>
+<tr><td><span class='swatch'><span style='background:#a48560'></span><span style='background:#a4845f'></span></span></td><td><code>#a48560</code> → <code>#a4845f</code></td><td class='num'>1</td><td class='num'>82</td></tr>
+<tr><td><span class='swatch'><span style='background:#b38e7d'></span><span style='background:#b28e7c'></span></span></td><td><code>#b38e7d</code> → <code>#b28e7c</code></td><td class='num'>1</td><td class='num'>78</td></tr>
+<tr><td><span class='swatch'><span style='background:#36462d'></span><span style='background:#35452d'></span></span></td><td><code>#36462d</code> → <code>#35452d</code></td><td class='num'>1</td><td class='num'>55</td></tr>
+<tr><td><span class='swatch'><span style='background:#afa3a3'></span><span style='background:#afa2a2'></span></span></td><td><code>#afa3a3</code> → <code>#afa2a2</code></td><td class='num'>1</td><td class='num'>49</td></tr>
+<tr><td><span class='swatch'><span style='background:#dcd8a4'></span><span style='background:#dbd7a3'></span></span></td><td><code>#dcd8a4</code> → <code>#dbd7a3</code></td><td class='num'>1</td><td class='num'>48</td></tr>
+<tr><td><span class='swatch'><span style='background:#eeeeee'></span><span style='background:#ededed'></span></span></td><td><code>#eeeeee</code> → <code>#ededed</code></td><td class='num'>1</td><td class='num'>47</td></tr>
+<tr><td><span class='swatch'><span style='background:#83c790'></span><span style='background:#82c790'></span></span></td><td><code>#83c790</code> → <code>#82c790</code></td><td class='num'>1</td><td class='num'>42</td></tr>
+<tr><td><span class='swatch'><span style='background:#9fc0ab'></span><span style='background:#9fbfaa'></span></span></td><td><code>#9fc0ab</code> → <code>#9fbfaa</code></td><td class='num'>1</td><td class='num'>39</td></tr>
+<tr><td><span class='swatch'><span style='background:#8ea59f'></span><span style='background:#8da49e'></span></span></td><td><code>#8ea59f</code> → <code>#8da49e</code></td><td class='num'>1</td><td class='num'>30</td></tr>
+<tr><td><span class='swatch'><span style='background:#5d5d5d'></span><span style='background:#5c5c5c'></span></span></td><td><code>#5d5d5d</code> → <code>#5c5c5c</code></td><td class='num'>1</td><td class='num'>26</td></tr>
+<tr><td><span class='swatch'><span style='background:#e08282'></span><span style='background:#df8181'></span></span></td><td><code>#e08282</code> → <code>#df8181</code></td><td class='num'>1</td><td class='num'>19</td></tr>
+<tr><td><span class='swatch'><span style='background:#922e8a'></span><span style='background:#922d8a'></span></span></td><td><code>#922e8a</code> → <code>#922d8a</code></td><td class='num'>1</td><td class='num'>16</td></tr>
+<tr><td><span class='swatch'><span style='background:#32412a'></span><span style='background:#32402a'></span></span></td><td><code>#32412a</code> → <code>#32402a</code></td><td class='num'>1</td><td class='num'>15</td></tr>
+<tr><td><span class='swatch'><span style='background:#e6aeae'></span><span style='background:#e6adad'></span></span></td><td><code>#e6aeae</code> → <code>#e6adad</code></td><td class='num'>1</td><td class='num'>15</td></tr>
+<tr><td><span class='swatch'><span style='background:#1a5927'></span><span style='background:#195827'></span></span></td><td><code>#1a5927</code> → <code>#195827</code></td><td class='num'>1</td><td class='num'>12</td></tr>
+<tr><td><span class='swatch'><span style='background:#808f5b'></span><span style='background:#808f5a'></span></span></td><td><code>#808f5b</code> → <code>#808f5a</code></td><td class='num'>1</td><td class='num'>12</td></tr>
+<tr><td><span class='swatch'><span style='background:#1a4759'></span><span style='background:#1a4658'></span></span></td><td><code>#1a4759</code> → <code>#1a4658</code></td><td class='num'>1</td><td class='num'>12</td></tr>
+<tr><td><span class='swatch'><span style='background:#8d867e'></span><span style='background:#8d867d'></span></span></td><td><code>#8d867e</code> → <code>#8d867d</code></td><td class='num'>1</td><td class='num'>11</td></tr>
+<tr><td><span class='swatch'><span style='background:#e8efc0'></span><span style='background:#e8eebf'></span></span></td><td><code>#e8efc0</code> → <code>#e8eebf</code></td><td class='num'>1</td><td class='num'>11</td></tr>
+<tr><td><span class='swatch'><span style='background:#a4a3a0'></span><span style='background:#a3a3a0'></span></span></td><td><code>#a4a3a0</code> → <code>#a3a3a0</code></td><td class='num'>1</td><td class='num'>10</td></tr>
+<tr><td><span class='swatch'><span style='background:#cad6e1'></span><span style='background:#c9d5e0'></span></span></td><td><code>#cad6e1</code> → <code>#c9d5e0</code></td><td class='num'>1</td><td class='num'>10</td></tr>
+<tr><td><span class='swatch'><span style='background:#c9f2fd'></span><span style='background:#c9f1fc'></span></span></td><td><code>#c9f2fd</code> → <code>#c9f1fc</code></td><td class='num'>1</td><td class='num'>10</td></tr>
+<tr><td><span class='swatch'><span style='background:#772614'></span><span style='background:#762614'></span></span></td><td><code>#772614</code> → <code>#762614</code></td><td class='num'>1</td><td class='num'>9</td></tr>
+<tr><td><span class='swatch'><span style='background:#6d0069'></span><span style='background:#6c0069'></span></span></td><td><code>#6d0069</code> → <code>#6c0069</code></td><td class='num'>1</td><td class='num'>8</td></tr>
+<tr><td><span class='swatch'><span style='background:#dcdcdc'></span><span style='background:#dbdbdb'></span></span></td><td><code>#dcdcdc</code> → <code>#dbdbdb</code></td><td class='num'>1</td><td class='num'>8</td></tr>
+<tr><td><span class='swatch'><span style='background:#52422f'></span><span style='background:#52422e'></span></span></td><td><code>#52422f</code> → <code>#52422e</code></td><td class='num'>1</td><td class='num'>7</td></tr>
+<tr><td><span class='swatch'><span style='background:#868377'></span><span style='background:#868376'></span></span></td><td><code>#868377</code> → <code>#868376</code></td><td class='num'>1</td><td class='num'>7</td></tr>
+<tr><td><span class='swatch'><span style='background:#877850'></span><span style='background:#87784f'></span></span></td><td><code>#877850</code> → <code>#87784f</code></td><td class='num'>1</td><td class='num'>7</td></tr>
+<tr><td><span class='swatch'><span style='background:#42503a'></span><span style='background:#414f39'></span></span></td><td><code>#42503a</code> → <code>#414f39</code></td><td class='num'>1</td><td class='num'>6</td></tr>
+<tr><td><span class='swatch'><span style='background:#dacdbb'></span><span style='background:#d9ccbb'></span></span></td><td><code>#dacdbb</code> → <code>#d9ccbb</code></td><td class='num'>1</td><td class='num'>6</td></tr>
+<tr><td><span class='swatch'><span style='background:#a66e2c'></span><span style='background:#a26b2a'></span></span></td><td><code>#a66e2c</code> → <code>#a26b2a</code></td><td class='num'>4</td><td class='num'>5</td></tr>
+<tr><td><span class='swatch'><span style='background:#b71b97'></span><span style='background:#b61a96'></span></span></td><td><code>#b71b97</code> → <code>#b61a96</code></td><td class='num'>1</td><td class='num'>5</td></tr>
+<tr><td><span class='swatch'><span style='background:#8f8254'></span><span style='background:#8e8154'></span></span></td><td><code>#8f8254</code> → <code>#8e8154</code></td><td class='num'>1</td><td class='num'>5</td></tr>
+<tr><td><span class='swatch'><span style='background:#43513b'></span><span style='background:#42513a'></span></span></td><td><code>#43513b</code> → <code>#42513a</code></td><td class='num'>1</td><td class='num'>4</td></tr>
+<tr><td><span class='swatch'><span style='background:#251409'></span><span style='background:#241409'></span></span></td><td><code>#251409</code> → <code>#241409</code></td><td class='num'>1</td><td class='num'>4</td></tr>
+<tr><td><span class='swatch'><span style='background:#5e794f'></span><span style='background:#5d794e'></span></span></td><td><code>#5e794f</code> → <code>#5d794e</code></td><td class='num'>1</td><td class='num'>4</td></tr>
+<tr><td><span class='swatch'><span style='background:#a66e2c'></span><span style='background:#a66f2e'></span></span></td><td><code>#a66e2c</code> → <code>#a66f2e</code></td><td class='num'>2</td><td class='num'>3</td></tr>
+<tr><td><span class='swatch'><span style='background:#392312'></span><span style='background:#382212'></span></span></td><td><code>#392312</code> → <code>#382212</code></td><td class='num'>1</td><td class='num'>3</td></tr>
+<tr><td><span class='swatch'><span style='background:#986347'></span><span style='background:#986247'></span></span></td><td><code>#986347</code> → <code>#986247</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#b8b4ac'></span><span style='background:#b7b3ac'></span></span></td><td><code>#b8b4ac</code> → <code>#b7b3ac</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#382d1f'></span><span style='background:#382c1f'></span></span></td><td><code>#382d1f</code> → <code>#382c1f</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#5d2310'></span><span style='background:#5c2210'></span></span></td><td><code>#5d2310</code> → <code>#5c2210</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#9bcfda'></span><span style='background:#9acfd9'></span></span></td><td><code>#9bcfda</code> → <code>#9acfd9</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#b0e3ee'></span><span style='background:#b0e2ed'></span></span></td><td><code>#b0e3ee</code> → <code>#b0e2ed</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#725d43'></span><span style='background:#725c42'></span></span></td><td><code>#725d43</code> → <code>#725c42</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#473929'></span><span style='background:#463828'></span></span></td><td><code>#473929</code> → <code>#463828</code></td><td class='num'>1</td><td class='num'>2</td></tr>
+<tr><td><span class='swatch'><span style='background:#a66e2c'></span><span style='background:#a8712f'></span></span></td><td><code>#a66e2c</code> → <code>#a8712f</code></td><td class='num'>3</td><td class='num'>1</td></tr>
+<tr><td><span class='swatch'><span style='background:#baaca2'></span><span style='background:#b9aba1'></span></span></td><td><code>#baaca2</code> → <code>#b9aba1</code></td><td class='num'>1</td><td class='num'>1</td></tr>
+<tr><td><span class='swatch'><span style='background:#a66e2c'></span><span style='background:#a36b2b'></span></span></td><td><code>#a66e2c</code> → <code>#a36b2b</code></td><td class='num'>3</td><td class='num'>1</td></tr>
+<tr><td><span class='swatch'><span style='background:#7b6547'></span><span style='background:#7a6447'></span></span></td><td><code>#7b6547</code> → <code>#7a6447</code></td><td class='num'>1</td><td class='num'>1</td></tr>
+</table>
+<h2>Perceptual identity (thresholded)</h2>
+<p>SHA-256 is all-or-nothing — one rounded channel flips the whole digest. To <em>quantify</em> “visually the same”, each punk also carries three independent 64-bit perceptual hashes (<b>aHash</b> average, <b>dHash</b> gradient, <b>pHash</b> DCT); we measure the Hamming distance between the onchain and original fingerprint.</p>
+<p class='big'>Max distance 3/64 across all 10,000 punks — threshold 5 (≤5 = near-identical), 0 exceptions.</p>
+<table><tr><th class='num'>Distance</th><th class='num'>aHash</th><th class='num'>dHash</th><th class='num'>pHash</th></tr>
+<tr><td class='num'>0</td><td class='num'>9,997</td><td class='num'>9,995</td><td class='num'>9,905</td></tr>
+<tr><td class='num'>1</td><td class='num'>2</td><td class='num'>5</td><td class='num'>0</td></tr>
+<tr><td class='num'>2</td><td class='num'>0</td><td class='num'>0</td><td class='num'>95</td></tr>
+<tr><td class='num'>3</td><td class='num'>1</td><td class='num'>0</td><td class='num'>0</td></tr>
+</table>
+<h2>Structural differences</h2>
+<p>None. No punk differed beyond the alpha-rounding band.</p>
+<h2>Reproduce</h2>
+<p><code>pip install -r verify/requirements.txt &amp;&amp; python verify/compare.py --tokens 10000-19999 &amp;&amp; python verify/build_report.py</code></p>
+</body></html>

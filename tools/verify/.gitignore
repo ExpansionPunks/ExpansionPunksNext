@@ -1,0 +1,6 @@
+# Regenerable: cached contract responses, IPFS originals, and per-token masks.
+# Re-create with `python verify/compare.py --tokens 10000-19999`.
+cache/
+
+# The published report (REPORT.md, hashes.csv, report.html, swatches/) is
+# tracked — it is the deliverable.
