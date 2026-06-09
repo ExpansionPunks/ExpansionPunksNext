@@ -108,3 +108,28 @@ export const discordDiscussionLinks = {
   xip24: "https://discord.com/channels/864147158777462854/1475812449805537321",
   xip25: "https://discord.com/channels/864147158777462854/1475812769595916333",
 } as const;
+
+// Onchain-vs-IPFS verification result. Source of truth: the verify/ kit's
+// verify/cache/results.json `summary` block (full run 2026-06-09 against the
+// Sepolia v3 Renderer). Re-run against mainnet and update these on deployment.
+export const verifyResult = {
+  total: 10000,
+  exact: 6085,
+  rounding: 3915,
+  structural: 0,
+  maxPerceptualDist: 3,
+  perceptualThreshold: 5,
+  tolerancePerChannel: 8,
+  network: "Sepolia testnet",
+  date: "2026-06-09",
+} as const;
+
+// Canonical sources on the public repo (ExpansionPunks/ExpansionPunksNext).
+// The kit publishes to tools/verify/ via scripts/publish-verify.ps1; these
+// links resolve once that has been pushed to the public repo.
+const verifyRepoBase = "https://github.com/ExpansionPunks/ExpansionPunksNext";
+export const verifyLinks = {
+  report: `${verifyRepoBase}/blob/main/tools/verify/report/REPORT.md`,
+  data: `${verifyRepoBase}/blob/main/tools/verify/report/hashes.csv`,
+  tool: `${verifyRepoBase}/tree/main/tools/verify`,
+} as const;

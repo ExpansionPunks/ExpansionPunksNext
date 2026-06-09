@@ -1,14 +1,25 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { PunkImage } from "@/components/ui/PunkImage";
+import { PillarFigure, type PillarVariant } from "@/components/home/PillarFigure";
 
-const doorways = [
+const doorways: ReadonlyArray<{
+  key: string;
+  accent: string;
+  kicker: string;
+  title: string;
+  copy: string;
+  variant: PillarVariant;
+  tokenId: number;
+  href: string;
+  cta: string;
+}> = [
   {
     key: "why",
     accent: "plum",
     kicker: "Past",
     title: "Story",
     copy: "How a more representative expansion of the Punkverse became a DAO and chose a permanent onchain home.",
+    variant: "lineage",
     tokenId: 10006,
     href: "/story",
     cta: "Read the story",
@@ -19,6 +30,7 @@ const doorways = [
     kicker: "Present",
     title: "Collection",
     copy: "Ten thousand xPunks, #10000 to #19999, assembled from onchain parts. Inspect the art and its provenance.",
+    variant: "mosaic",
     tokenId: 12238,
     href: "/collection",
     cta: "Open the collection",
@@ -29,11 +41,12 @@ const doorways = [
     kicker: "Future",
     title: "Migration",
     copy: "Retire the legacy token, mint the same-numbered xPunk onchain, and follow the DAO wind-down.",
+    variant: "onchain",
     tokenId: 18108,
     href: "/migration",
     cta: "See migration",
   },
-] as const;
+];
 
 export function Doorways() {
   return (
@@ -44,7 +57,7 @@ export function Doorways() {
           <h2>{d.title}</h2>
           <p>{d.copy}</p>
           <figure className="doorway-figure">
-            <PunkImage tokenId={d.tokenId} decorative />
+            <PillarFigure variant={d.variant} tokenId={d.tokenId} />
           </figure>
           <ButtonLink variant="primary" href={d.href}>
             {d.cta}

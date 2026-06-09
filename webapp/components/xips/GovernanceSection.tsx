@@ -1,6 +1,7 @@
 import { StatusLine } from "@/components/site/StatusLine";
 import { ExecutionMap } from "@/components/xips/ExecutionMap";
-import { discordDiscussionLinks, snapshotLinks } from "@/lib/site-data";
+import { discordDiscussionLinks, snapshotLinks, verifyResult } from "@/lib/site-data";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 
 export function GovernanceSection() {
   return (
@@ -14,7 +15,7 @@ export function GovernanceSection() {
             a new official onchain contract. Holders retire the legacy token and
             receive the same numbered xPunk from the new contract.
           </p>
-          <StatusLine status="current">Verify 10k is in progress</StatusLine>
+          <StatusLine status="current">Verified on testnet; preparing for mainnet</StatusLine>
           <div className="proposal-links">
             <a href={snapshotLinks.xip24} rel="noreferrer" target="_blank">
               Snapshot proposal
@@ -81,14 +82,29 @@ export function GovernanceSection() {
           <div className="band-head">
             <h2>Where we are now</h2>
             <p>
-              Verification is underway now. Migration begins only after preflight,
-              mainnet deployment and published proof are complete.
+              We have reproduced all 10k onchain on testnet and verified every
+              pixel against the originals. Now we are in preflight — audit and
+              mainnet rehearsal — before deploy and the published proof.
             </p>
           </div>
         </div>
         <div className="content-band execution-frame">
           <ExecutionMap />
         </div>
+      </section>
+      <section className="content-band verify-teaser" id="verification">
+        <div className="band-head">
+          <h2>Proof the art survives</h2>
+          <p>
+            We rebuilt all {verifyResult.total.toLocaleString()} punks from the onchain
+            contract and compared every pixel against the originals.{" "}
+            {verifyResult.exact.toLocaleString()} match exactly, the rest differ only by
+            imperceptible rounding, and none differ structurally.
+          </p>
+        </div>
+        <ButtonLink href="/migration/verify" variant="primary">
+          See the verification
+        </ButtonLink>
       </section>
       <section className="content-band contract-placeholder" id="contracts">
         <h2>Contracts and proofs</h2>

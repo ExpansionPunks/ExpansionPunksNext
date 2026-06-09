@@ -63,12 +63,16 @@ export function ExecutionMap() {
 
         <TimelineNode className="done migration-node tc3 tr1" title="Testnet build" copy="Sepolia build is live." />
         <TimelineNode
-          className="current migration-node tc4 tr1"
+          className="done migration-node tc4 tr1"
           title="Verify 10k"
-          copy="Confirm every punk matches."
+          copy="Every punk confirmed to match."
+        />
+        <TimelineNode
+          className="current migration-node tc5 tr1"
+          title="Preflight"
+          copy="Audit and rehearse mainnet."
           marker
         />
-        <TimelineNode className="migration-node tc5 tr1" title="Preflight" copy="Audit and rehearse mainnet." />
         <TimelineNode className="migration-node tc6 tr1" title="Mainnet deploy" copy="Deploy and publish addresses." />
         <TimelineNode className="migration-node tc7 tr1" title="Migration begins" copy="Launch the website." />
         <Delay className="tc8 tr1">4 weeks</Delay>
