@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "model": "balanced-components",
+  "name": "Balanced participation",
+  "snapshotBlock": 25529960,
+  "poolWei": "13371700000000000000",
+  "eligibility": {
+    "minHistoryDays": 30,
+    "description": "At least 30 days of collection history and a positive loyalty or governance signal. A recipient must migrate at least one xPunk before claiming."
+  },
+  "allocation": {
+    "transform": "sqrt",
+    "minPayoutWei": "2000000000000000",
+    "componentSharesBps": {
+      "loyalty": 7500,
+      "governance": 2000,
+      "overlap": 500
+    }
+  },
+  "governancePolicy": {
+    "discordIncluded": false,
+    "excludedProposalIds": [
+      "0x9f9223a38b26a9a1aaf1069db234290a95e4c5885263c12512968b9b0cc58ecb"
+    ],
+    "excludedProposalLabel": "XIP 25"
+  },
+  "overlap": {
+    "minLongestHoldDays": 365,
+    "score": "sqrt(loyalty * governance)"
+  },
+  "loyaltyRules": [
+    { "id": "minter", "type": "flat", "field": "mintedCount", "op": ">", "value": 0, "points": 75 },
+    { "id": "minted_volume", "type": "per_unit", "field": "mintedCount", "points_per": 2, "cap": 100 },
+    { "id": "token_days", "type": "per_unit", "field": "tokenDaysHeld_adj", "points_per": 0.03, "cap": 200 },
+    { "id": "diamond_hand", "type": "flat", "field": "isDiamondHand", "op": "truthy", "points": 100 },
+    { "id": "held_1y", "type": "flat", "field": "longestSingleHoldDays", "op": ">=", "value": 365, "points": 75 },
+    { "id": "held_2y", "type": "flat", "field": "longestSingleHoldDays", "op": ">=", "value": 730, "points": 75 },
+    { "id": "held_3y", "type": "flat", "field": "longestSingleHoldDays", "op": ">=", "value": 1095, "points": 75 },
+    { "id": "since_mint", "type": "flat", "field": "stillHoldingSinceMint", "op": "truthy", "points": 350 },
+    { "id": "held_through_bear", "type": "flat", "field": "heldThroughBear", "op": "truthy", "points": 150 }
+  ],
+  "governanceRules": [
+    { "id": "voted_1", "type": "flat", "field": "proposalsVoted", "op": ">=", "value": 1, "points": 100 },
+    { "id": "voted_3", "type": "flat", "field": "proposalsVoted", "op": ">=", "value": 3, "points": 100 },
+    { "id": "voted_7", "type": "flat", "field": "proposalsVoted", "op": ">=", "value": 7, "points": 100 },
+    { "id": "voted_12", "type": "flat", "field": "proposalsVoted", "op": ">=", "value": 12, "points": 100 },
+    { "id": "vote_rate", "type": "scaled", "field": "voteRate", "points_per": 300 },
+    { "id": "authored", "type": "per_unit", "field": "proposalsAuthored", "points_per": 250, "cap": 750 },
+    { "id": "governance_span", "type": "flat", "field": "governanceSpanDays", "op": ">=", "value": 365, "points": 150 },
+    { "id": "contentious", "type": "per_unit", "field": "contentiousVoteCredit", "points_per": 50, "cap": 200 }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "snapshotBlock": 25529960,
+  "exclusions": [
+    {
+      "address": "0x6df748fd1d9154ffaea6f2f59d369ccacc1c9f2c",
+      "label": "Expansion Punks DAO treasury Safe",
+      "reason": "DAO entity, not an individual participant"
+    },
+    {
+      "address": "0x6d8dec3fd68d94a7189a98346ea52b4d32e00012",
+      "label": "floar (formula author)",
+      "reason": "Self-excluded to avoid a reward-formula conflict of interest"
+    },
+    {
+      "address": "0x930b9cc24c46c341803e5fefb3590bdb4ff576a6",
+      "label": "Expansion Punks deployer wallet",
+      "reason": "Project-controlled wallet excluded by treasury decision"
+    },
+    {
+      "address": "0x277ad5d56cb83dbfe5926232495888abc0710e2f",
+      "label": "Legacy FU project wallet",
+      "reason": "Project-linked wallet excluded by treasury decision"
+    },
+    {
+      "address": "0x1a84cb84603d045efc7c09c03c4a179145094927",
+      "label": "NFTX xPUNK vault",
+      "reason": "Protocol custody vault, not a beneficial community participant"
+    }
+  ]
+}
