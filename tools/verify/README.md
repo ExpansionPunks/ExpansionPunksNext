@@ -24,19 +24,20 @@ shown in `compare.py`), so there is no web3 stack to audit around.
 pip install -r verify/requirements.txt
 
 # verify one punk (prints both hashes + verdict, writes a mask if they differ)
-python verify/compare.py --token 10036
+python verify/compare.py --rpc "$SEPOLIA_RPC_URL" --token 10036
 
 # verify a range or an explicit list
-python verify/compare.py --tokens 10000-10099
-python verify/compare.py --tokens 11177,12101,18124
+python verify/compare.py --rpc "$SEPOLIA_RPC_URL" --tokens 10000-10099
+python verify/compare.py --rpc "$SEPOLIA_RPC_URL" --tokens 11177,12101,18124
 
 # verify the whole collection (resumable; cached to disk)
-python verify/compare.py --tokens 10000-19999
+python verify/compare.py --rpc "$SEPOLIA_RPC_URL" --tokens 10000-19999
 ```
 
 Useful flags: `--rpc`, `--renderer`, `--gateway`, `--cid`, `--tolerance`,
-`--concurrency`, `--out`. Defaults point at the current deployment; override
-`--renderer`/`--rpc` to re-run against mainnet once it is live.
+`--concurrency`, `--out`. `--rpc` is required unless `SEPOLIA_RPC_URL` is set;
+no provider credential is embedded in this repository. Override `--renderer`
+and the RPC to re-run against mainnet once it is live.
 
 ## What you get
 

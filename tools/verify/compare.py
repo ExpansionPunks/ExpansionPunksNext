@@ -19,10 +19,9 @@ The contract is queried with a hand-rolled eth_call and a hardcoded 4-byte
 selector so there is no web3/keccak dependency to audit around.
 
 Usage:
-    python verify/compare.py                       # full 10000-19999 run
-    python verify/compare.py --token 10036         # single punk
-    python verify/compare.py --tokens 11177,12101  # explicit list
-    python verify/compare.py --tokens 10000-10099  # a range
+    python verify/compare.py --rpc "$SEPOLIA_RPC_URL"                       # full run
+    python verify/compare.py --rpc "$SEPOLIA_RPC_URL" --token 10036         # single punk
+    python verify/compare.py --rpc "$SEPOLIA_RPC_URL" --tokens 11177,12101  # explicit list
 
 Output (default --out verify/cache):
     onchain/punk{id}.svg     cached contract response
@@ -54,7 +53,7 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="repla
 # Defaults (all overridable via CLI)
 # ---------------------------------------------------------------------------
 
-DEFAULT_RPC = "https://sepolia.infura.io/v3/0bf66a4697c74492bcfb27aefb141c6f"
+DEFAULT_RPC = os.environ.get("SEPOLIA_RPC_URL")
 DEFAULT_RENDERER = "0x243C1Ca2d976Eef9fec23675F700814745299E68"
 
 # IPFS image the live ExpansionPunks collection references, via the project's
@@ -419,7 +418,12 @@ def parse_args(argv=None):
     p = argparse.ArgumentParser(description="Verify onchain punks against IPFS originals.")
     p.add_argument("--token", type=int, help="Single token id (shortcut).")
     p.add_argument("--tokens", type=str, help="Comma list and/or ranges, e.g. 10000-10099,11177.")
-    p.add_argument("--rpc", default=DEFAULT_RPC)
+    p.add_argument(
+        "--rpc",
+        default=DEFAULT_RPC,
+        required=DEFAULT_RPC is None,
+        help="JSON-RPC URL (or set SEPOLIA_RPC_URL)",
+    )
     p.add_argument("--renderer", default=DEFAULT_RENDERER)
     p.add_argument("--gateway", default=DEFAULT_GATEWAY)
     p.add_argument("--cid", default=DEFAULT_IMAGE_CID)
