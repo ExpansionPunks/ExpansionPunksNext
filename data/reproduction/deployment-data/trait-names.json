@@ -1,0 +1,1200 @@
+{
+  "description": "Trait display names and categories for JSON metadata",
+  "totalTraits": 199,
+  "traits": [
+    {
+      "index": 0,
+      "filename": "f-clownhairgreen.png",
+      "displayName": "Clownhairgreen",
+      "category": "Hair"
+    },
+    {
+      "index": 1,
+      "filename": "f-crazyhair.png",
+      "displayName": "Crazyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 2,
+      "filename": "f-frumpyhair.png",
+      "displayName": "Frumpyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 3,
+      "filename": "f-headband.png",
+      "displayName": "Headband",
+      "category": "Hair"
+    },
+    {
+      "index": 4,
+      "filename": "f-wildhair.png",
+      "displayName": "Wildhair",
+      "category": "Hair"
+    },
+    {
+      "index": 5,
+      "filename": "m-clownhairgreen.png",
+      "displayName": "Clownhairgreen",
+      "category": "Hair"
+    },
+    {
+      "index": 6,
+      "filename": "m-crazyhair.png",
+      "displayName": "Crazyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 7,
+      "filename": "m-frumpyhair.png",
+      "displayName": "Frumpyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 8,
+      "filename": "m-headband.png",
+      "displayName": "Headband",
+      "category": "Hair"
+    },
+    {
+      "index": 9,
+      "filename": "m-wildhair.png",
+      "displayName": "Wildhair",
+      "category": "Hair"
+    },
+    {
+      "index": 10,
+      "filename": "nbf-clownhairgreen.png",
+      "displayName": "Clownhairgreen",
+      "category": "Hair"
+    },
+    {
+      "index": 11,
+      "filename": "nbf-crazyhair.png",
+      "displayName": "Crazyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 12,
+      "filename": "nbf-frumpyhair.png",
+      "displayName": "Frumpyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 13,
+      "filename": "nbf-headband.png",
+      "displayName": "Headband",
+      "category": "Hair"
+    },
+    {
+      "index": 14,
+      "filename": "nbf-wildhair.png",
+      "displayName": "Wildhair",
+      "category": "Hair"
+    },
+    {
+      "index": 15,
+      "filename": "nbm-clownhairgreen.png",
+      "displayName": "Clownhairgreen",
+      "category": "Hair"
+    },
+    {
+      "index": 16,
+      "filename": "nbm-crazyhair.png",
+      "displayName": "Crazyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 17,
+      "filename": "nbm-frumpyhair.png",
+      "displayName": "Frumpyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 18,
+      "filename": "nbm-headband.png",
+      "displayName": "Headband",
+      "category": "Hair"
+    },
+    {
+      "index": 19,
+      "filename": "nbm-wildhair.png",
+      "displayName": "Wildhair",
+      "category": "Hair"
+    },
+    {
+      "index": 20,
+      "filename": "uf-3dglasses.png",
+      "displayName": "3D Glasses",
+      "category": "Eyes"
+    },
+    {
+      "index": 21,
+      "filename": "uf-albino.png",
+      "displayName": "Albino",
+      "category": "Base"
+    },
+    {
+      "index": 22,
+      "filename": "uf-alien.png",
+      "displayName": "Alien",
+      "category": "Base"
+    },
+    {
+      "index": 23,
+      "filename": "uf-ape.png",
+      "displayName": "Ape",
+      "category": "Base"
+    },
+    {
+      "index": 24,
+      "filename": "uf-bandana.png",
+      "displayName": "Bandana",
+      "category": "Hair"
+    },
+    {
+      "index": 25,
+      "filename": "uf-beanie.png",
+      "displayName": "Beanie",
+      "category": "Hair"
+    },
+    {
+      "index": 26,
+      "filename": "uf-bigbeard.png",
+      "displayName": "Bigbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 27,
+      "filename": "uf-bigshades.png",
+      "displayName": "Bigshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 28,
+      "filename": "uf-blacklipstick.png",
+      "displayName": "Blacklipstick",
+      "category": "Mouth"
+    },
+    {
+      "index": 29,
+      "filename": "uf-blondebob.png",
+      "displayName": "Blondebob",
+      "category": "Hair"
+    },
+    {
+      "index": 30,
+      "filename": "uf-blondeshort.png",
+      "displayName": "Blondeshort",
+      "category": "Hair"
+    },
+    {
+      "index": 31,
+      "filename": "uf-blueeyeshadow.png",
+      "displayName": "Blueeyeshadow",
+      "category": "Eyes"
+    },
+    {
+      "index": 32,
+      "filename": "uf-buckteeth.png",
+      "displayName": "Buckteeth",
+      "category": "Mouth"
+    },
+    {
+      "index": 33,
+      "filename": "uf-cap.png",
+      "displayName": "Cap",
+      "category": "Hair"
+    },
+    {
+      "index": 34,
+      "filename": "uf-capforward.png",
+      "displayName": "Capforward",
+      "category": "Hair"
+    },
+    {
+      "index": 35,
+      "filename": "uf-chinstrap.png",
+      "displayName": "Chinstrap",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 36,
+      "filename": "uf-choker.png",
+      "displayName": "Choker",
+      "category": "Neck Accessory"
+    },
+    {
+      "index": 37,
+      "filename": "uf-cigarette.png",
+      "displayName": "Cigarette",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 38,
+      "filename": "uf-classicshades.png",
+      "displayName": "Classicshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 39,
+      "filename": "uf-clowneyesblue.png",
+      "displayName": "Clowneyesblue",
+      "category": "Eyes"
+    },
+    {
+      "index": 40,
+      "filename": "uf-clowneyesgreen.png",
+      "displayName": "Clowneyesgreen",
+      "category": "Eyes"
+    },
+    {
+      "index": 41,
+      "filename": "uf-clownnose.png",
+      "displayName": "Clownnose",
+      "category": "Nose"
+    },
+    {
+      "index": 42,
+      "filename": "uf-cowboyhat.png",
+      "displayName": "Cowboyhat",
+      "category": "Hair"
+    },
+    {
+      "index": 43,
+      "filename": "uf-dark.png",
+      "displayName": "Dark",
+      "category": "Base"
+    },
+    {
+      "index": 44,
+      "filename": "uf-darkhair.png",
+      "displayName": "Darkhair",
+      "category": "Hair"
+    },
+    {
+      "index": 45,
+      "filename": "uf-do-rag.png",
+      "displayName": "Do-rag",
+      "category": "Hair"
+    },
+    {
+      "index": 46,
+      "filename": "uf-earring.png",
+      "displayName": "Earring",
+      "category": "Ear"
+    },
+    {
+      "index": 47,
+      "filename": "uf-eyemask.png",
+      "displayName": "Eyemask",
+      "category": "Eyes"
+    },
+    {
+      "index": 48,
+      "filename": "uf-eyepatch.png",
+      "displayName": "Eyepatch",
+      "category": "Eyes"
+    },
+    {
+      "index": 49,
+      "filename": "uf-fedora.png",
+      "displayName": "Fedora",
+      "category": "Hair"
+    },
+    {
+      "index": 50,
+      "filename": "uf-frontbeard.png",
+      "displayName": "Frontbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 51,
+      "filename": "uf-frontbearddark.png",
+      "displayName": "Frontbearddark",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 52,
+      "filename": "uf-frown.png",
+      "displayName": "Frown",
+      "category": "Mouth"
+    },
+    {
+      "index": 53,
+      "filename": "uf-goat.png",
+      "displayName": "Goat",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 54,
+      "filename": "uf-goldchain.png",
+      "displayName": "Goldchain",
+      "category": "Neck Accessory"
+    },
+    {
+      "index": 55,
+      "filename": "uf-greeneyeshadow.png",
+      "displayName": "Greeneyeshadow",
+      "category": "Eyes"
+    },
+    {
+      "index": 56,
+      "filename": "uf-halfshaved.png",
+      "displayName": "Halfshaved",
+      "category": "Hair"
+    },
+    {
+      "index": 57,
+      "filename": "uf-handlebars.png",
+      "displayName": "Handlebars",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 58,
+      "filename": "uf-hoodie.png",
+      "displayName": "Hoodie",
+      "category": "Hair"
+    },
+    {
+      "index": 59,
+      "filename": "uf-hornedrimglasses.png",
+      "displayName": "Hornedrimglasses",
+      "category": "Eyes"
+    },
+    {
+      "index": 60,
+      "filename": "uf-hotlipstick.png",
+      "displayName": "Hotlipstick",
+      "category": "Mouth"
+    },
+    {
+      "index": 61,
+      "filename": "uf-knittedcap.png",
+      "displayName": "Knittedcap",
+      "category": "Hair"
+    },
+    {
+      "index": 62,
+      "filename": "uf-light.png",
+      "displayName": "Light",
+      "category": "Base"
+    },
+    {
+      "index": 63,
+      "filename": "uf-luxuriousbeard.png",
+      "displayName": "Luxuriousbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 64,
+      "filename": "uf-medicalmask.png",
+      "displayName": "Medicalmask",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 65,
+      "filename": "uf-medium.png",
+      "displayName": "Medium",
+      "category": "Base"
+    },
+    {
+      "index": 66,
+      "filename": "uf-messyhair.png",
+      "displayName": "Messyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 67,
+      "filename": "uf-mohawk.png",
+      "displayName": "Mohawk",
+      "category": "Hair"
+    },
+    {
+      "index": 68,
+      "filename": "uf-mohawkdark.png",
+      "displayName": "Mohawkdark",
+      "category": "Hair"
+    },
+    {
+      "index": 69,
+      "filename": "uf-mohawkthin.png",
+      "displayName": "Mohawkthin",
+      "category": "Hair"
+    },
+    {
+      "index": 70,
+      "filename": "uf-mole.png",
+      "displayName": "Mole",
+      "category": "Blemish"
+    },
+    {
+      "index": 71,
+      "filename": "uf-mustache.png",
+      "displayName": "Mustache",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 72,
+      "filename": "uf-muttonchops.png",
+      "displayName": "Muttonchops",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 73,
+      "filename": "uf-nerdglasses.png",
+      "displayName": "Nerdglasses",
+      "category": "Eyes"
+    },
+    {
+      "index": 74,
+      "filename": "uf-nomouth.png",
+      "displayName": "Nomouth",
+      "category": "Mouth (Implicit)"
+    },
+    {
+      "index": 75,
+      "filename": "uf-normalbeard.png",
+      "displayName": "Normalbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 76,
+      "filename": "uf-normalbeardblack.png",
+      "displayName": "Normalbeardblack",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 77,
+      "filename": "uf-orangeside.png",
+      "displayName": "Orangeside",
+      "category": "Hair"
+    },
+    {
+      "index": 78,
+      "filename": "uf-peakspike.png",
+      "displayName": "Peakspike",
+      "category": "Hair"
+    },
+    {
+      "index": 79,
+      "filename": "uf-pigtails.png",
+      "displayName": "Pigtails",
+      "category": "Hair"
+    },
+    {
+      "index": 80,
+      "filename": "uf-pilothelmet.png",
+      "displayName": "Pilothelmet",
+      "category": "Hair"
+    },
+    {
+      "index": 81,
+      "filename": "uf-pinkwithhat.png",
+      "displayName": "Pinkwithhat",
+      "category": "Hair"
+    },
+    {
+      "index": 82,
+      "filename": "uf-pipe.png",
+      "displayName": "Pipe",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 83,
+      "filename": "uf-policecap.png",
+      "displayName": "Policecap",
+      "category": "Hair"
+    },
+    {
+      "index": 84,
+      "filename": "uf-purpleeyeshadow.png",
+      "displayName": "Purpleeyeshadow",
+      "category": "Eyes"
+    },
+    {
+      "index": 85,
+      "filename": "uf-purplehair.png",
+      "displayName": "Purplehair",
+      "category": "Hair"
+    },
+    {
+      "index": 86,
+      "filename": "uf-purplelipstick.png",
+      "displayName": "Purplelipstick",
+      "category": "Mouth"
+    },
+    {
+      "index": 87,
+      "filename": "uf-redmohawk.png",
+      "displayName": "Redmohawk",
+      "category": "Hair"
+    },
+    {
+      "index": 88,
+      "filename": "uf-regularshades.png",
+      "displayName": "Regularshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 89,
+      "filename": "uf-rosycheeks.png",
+      "displayName": "Rosycheeks",
+      "category": "Blemish"
+    },
+    {
+      "index": 90,
+      "filename": "uf-shadowbeard.png",
+      "displayName": "Shadowbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 91,
+      "filename": "uf-shavedhead.png",
+      "displayName": "Shavedhead",
+      "category": "Hair"
+    },
+    {
+      "index": 92,
+      "filename": "uf-silverchain.png",
+      "displayName": "Silverchain",
+      "category": "Neck Accessory"
+    },
+    {
+      "index": 93,
+      "filename": "uf-smallshades.png",
+      "displayName": "Smallshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 94,
+      "filename": "uf-smile.png",
+      "displayName": "Smile",
+      "category": "Mouth"
+    },
+    {
+      "index": 95,
+      "filename": "uf-spots.png",
+      "displayName": "Spots",
+      "category": "Blemish"
+    },
+    {
+      "index": 96,
+      "filename": "uf-straighthair.png",
+      "displayName": "Straighthair",
+      "category": "Hair"
+    },
+    {
+      "index": 97,
+      "filename": "uf-straighthairblonde.png",
+      "displayName": "Straighthairblonde",
+      "category": "Hair"
+    },
+    {
+      "index": 98,
+      "filename": "uf-straighthairdark.png",
+      "displayName": "Straighthairdark",
+      "category": "Hair"
+    },
+    {
+      "index": 99,
+      "filename": "uf-stringyhair.png",
+      "displayName": "Stringyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 100,
+      "filename": "uf-tasslehat.png",
+      "displayName": "Tasslehat",
+      "category": "Hair"
+    },
+    {
+      "index": 101,
+      "filename": "uf-tiara.png",
+      "displayName": "Tiara",
+      "category": "Hair"
+    },
+    {
+      "index": 102,
+      "filename": "uf-tophat.png",
+      "displayName": "Tophat",
+      "category": "Hair"
+    },
+    {
+      "index": 103,
+      "filename": "uf-vampirehair.png",
+      "displayName": "Vampirehair",
+      "category": "Hair"
+    },
+    {
+      "index": 104,
+      "filename": "uf-vape.png",
+      "displayName": "Vape",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 105,
+      "filename": "uf-vr.png",
+      "displayName": "VR",
+      "category": "Eyes"
+    },
+    {
+      "index": 106,
+      "filename": "uf-weldinggoggles.png",
+      "displayName": "Weldinggoggles",
+      "category": "Eyes"
+    },
+    {
+      "index": 107,
+      "filename": "uf-wildblonde.png",
+      "displayName": "Wildblonde",
+      "category": "Hair"
+    },
+    {
+      "index": 108,
+      "filename": "uf-wildwhitehair.png",
+      "displayName": "Wildwhitehair",
+      "category": "Hair"
+    },
+    {
+      "index": 109,
+      "filename": "uf-zombie.png",
+      "displayName": "Zombie",
+      "category": "Base"
+    },
+    {
+      "index": 110,
+      "filename": "um-3dglasses.png",
+      "displayName": "3D Glasses",
+      "category": "Eyes"
+    },
+    {
+      "index": 111,
+      "filename": "um-albino.png",
+      "displayName": "Albino",
+      "category": "Base"
+    },
+    {
+      "index": 112,
+      "filename": "um-alien.png",
+      "displayName": "Alien",
+      "category": "Base"
+    },
+    {
+      "index": 113,
+      "filename": "um-ape.png",
+      "displayName": "Ape",
+      "category": "Base"
+    },
+    {
+      "index": 114,
+      "filename": "um-bandana.png",
+      "displayName": "Bandana",
+      "category": "Hair"
+    },
+    {
+      "index": 115,
+      "filename": "um-beanie.png",
+      "displayName": "Beanie",
+      "category": "Hair"
+    },
+    {
+      "index": 116,
+      "filename": "um-bigbeard.png",
+      "displayName": "Bigbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 117,
+      "filename": "um-bigshades.png",
+      "displayName": "Bigshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 118,
+      "filename": "um-blacklipstick.png",
+      "displayName": "Blacklipstick",
+      "category": "Mouth"
+    },
+    {
+      "index": 119,
+      "filename": "um-blondebob.png",
+      "displayName": "Blondebob",
+      "category": "Hair"
+    },
+    {
+      "index": 120,
+      "filename": "um-blondeshort.png",
+      "displayName": "Blondeshort",
+      "category": "Hair"
+    },
+    {
+      "index": 121,
+      "filename": "um-blueeyeshadow.png",
+      "displayName": "Blueeyeshadow",
+      "category": "Eyes"
+    },
+    {
+      "index": 122,
+      "filename": "um-buckteeth.png",
+      "displayName": "Buckteeth",
+      "category": "Mouth"
+    },
+    {
+      "index": 123,
+      "filename": "um-cap.png",
+      "displayName": "Cap",
+      "category": "Hair"
+    },
+    {
+      "index": 124,
+      "filename": "um-capforward.png",
+      "displayName": "Capforward",
+      "category": "Hair"
+    },
+    {
+      "index": 125,
+      "filename": "um-chinstrap.png",
+      "displayName": "Chinstrap",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 126,
+      "filename": "um-choker.png",
+      "displayName": "Choker",
+      "category": "Neck Accessory"
+    },
+    {
+      "index": 127,
+      "filename": "um-cigarette.png",
+      "displayName": "Cigarette",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 128,
+      "filename": "um-classicshades.png",
+      "displayName": "Classicshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 129,
+      "filename": "um-clowneyesblue.png",
+      "displayName": "Clowneyesblue",
+      "category": "Eyes"
+    },
+    {
+      "index": 130,
+      "filename": "um-clowneyesgreen.png",
+      "displayName": "Clowneyesgreen",
+      "category": "Eyes"
+    },
+    {
+      "index": 131,
+      "filename": "um-clownnose.png",
+      "displayName": "Clownnose",
+      "category": "Nose"
+    },
+    {
+      "index": 132,
+      "filename": "um-cowboyhat.png",
+      "displayName": "Cowboyhat",
+      "category": "Hair"
+    },
+    {
+      "index": 133,
+      "filename": "um-dark.png",
+      "displayName": "Dark",
+      "category": "Base"
+    },
+    {
+      "index": 134,
+      "filename": "um-darkhair.png",
+      "displayName": "Darkhair",
+      "category": "Hair"
+    },
+    {
+      "index": 135,
+      "filename": "um-do-rag.png",
+      "displayName": "Do-rag",
+      "category": "Hair"
+    },
+    {
+      "index": 136,
+      "filename": "um-earring.png",
+      "displayName": "Earring",
+      "category": "Ear"
+    },
+    {
+      "index": 137,
+      "filename": "um-eyemask.png",
+      "displayName": "Eyemask",
+      "category": "Eyes"
+    },
+    {
+      "index": 138,
+      "filename": "um-eyepatch.png",
+      "displayName": "Eyepatch",
+      "category": "Eyes"
+    },
+    {
+      "index": 139,
+      "filename": "um-fedora.png",
+      "displayName": "Fedora",
+      "category": "Hair"
+    },
+    {
+      "index": 140,
+      "filename": "um-frontbeard.png",
+      "displayName": "Frontbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 141,
+      "filename": "um-frontbearddark.png",
+      "displayName": "Frontbearddark",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 142,
+      "filename": "um-frown.png",
+      "displayName": "Frown",
+      "category": "Mouth"
+    },
+    {
+      "index": 143,
+      "filename": "um-goat.png",
+      "displayName": "Goat",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 144,
+      "filename": "um-goldchain.png",
+      "displayName": "Goldchain",
+      "category": "Neck Accessory"
+    },
+    {
+      "index": 145,
+      "filename": "um-greeneyeshadow.png",
+      "displayName": "Greeneyeshadow",
+      "category": "Eyes"
+    },
+    {
+      "index": 146,
+      "filename": "um-halfshaved.png",
+      "displayName": "Halfshaved",
+      "category": "Hair"
+    },
+    {
+      "index": 147,
+      "filename": "um-handlebars.png",
+      "displayName": "Handlebars",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 148,
+      "filename": "um-hoodie.png",
+      "displayName": "Hoodie",
+      "category": "Hair"
+    },
+    {
+      "index": 149,
+      "filename": "um-hornedrimglasses.png",
+      "displayName": "Hornedrimglasses",
+      "category": "Eyes"
+    },
+    {
+      "index": 150,
+      "filename": "um-hotlipstick.png",
+      "displayName": "Hotlipstick",
+      "category": "Mouth"
+    },
+    {
+      "index": 151,
+      "filename": "um-knittedcap.png",
+      "displayName": "Knittedcap",
+      "category": "Hair"
+    },
+    {
+      "index": 152,
+      "filename": "um-light.png",
+      "displayName": "Light",
+      "category": "Base"
+    },
+    {
+      "index": 153,
+      "filename": "um-luxuriousbeard.png",
+      "displayName": "Luxuriousbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 154,
+      "filename": "um-medicalmask.png",
+      "displayName": "Medicalmask",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 155,
+      "filename": "um-medium.png",
+      "displayName": "Medium",
+      "category": "Base"
+    },
+    {
+      "index": 156,
+      "filename": "um-messyhair.png",
+      "displayName": "Messyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 157,
+      "filename": "um-mohawk.png",
+      "displayName": "Mohawk",
+      "category": "Hair"
+    },
+    {
+      "index": 158,
+      "filename": "um-mohawkdark.png",
+      "displayName": "Mohawkdark",
+      "category": "Hair"
+    },
+    {
+      "index": 159,
+      "filename": "um-mohawkthin.png",
+      "displayName": "Mohawkthin",
+      "category": "Hair"
+    },
+    {
+      "index": 160,
+      "filename": "um-mole.png",
+      "displayName": "Mole",
+      "category": "Blemish"
+    },
+    {
+      "index": 161,
+      "filename": "um-mustache.png",
+      "displayName": "Mustache",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 162,
+      "filename": "um-muttonchops.png",
+      "displayName": "Muttonchops",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 163,
+      "filename": "um-nerdglasses.png",
+      "displayName": "Nerdglasses",
+      "category": "Eyes"
+    },
+    {
+      "index": 164,
+      "filename": "um-normalbeard.png",
+      "displayName": "Normalbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 165,
+      "filename": "um-normalbeardblack.png",
+      "displayName": "Normalbeardblack",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 166,
+      "filename": "um-orangeside.png",
+      "displayName": "Orangeside",
+      "category": "Hair"
+    },
+    {
+      "index": 167,
+      "filename": "um-peakspike.png",
+      "displayName": "Peakspike",
+      "category": "Hair"
+    },
+    {
+      "index": 168,
+      "filename": "um-pigtails.png",
+      "displayName": "Pigtails",
+      "category": "Hair"
+    },
+    {
+      "index": 169,
+      "filename": "um-pilothelmet.png",
+      "displayName": "Pilothelmet",
+      "category": "Hair"
+    },
+    {
+      "index": 170,
+      "filename": "um-pinkwithhat.png",
+      "displayName": "Pinkwithhat",
+      "category": "Hair"
+    },
+    {
+      "index": 171,
+      "filename": "um-pipe.png",
+      "displayName": "Pipe",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 172,
+      "filename": "um-policecap.png",
+      "displayName": "Policecap",
+      "category": "Hair"
+    },
+    {
+      "index": 173,
+      "filename": "um-purpleeyeshadow.png",
+      "displayName": "Purpleeyeshadow",
+      "category": "Eyes"
+    },
+    {
+      "index": 174,
+      "filename": "um-purplehair.png",
+      "displayName": "Purplehair",
+      "category": "Hair"
+    },
+    {
+      "index": 175,
+      "filename": "um-purplelipstick.png",
+      "displayName": "Purplelipstick",
+      "category": "Mouth"
+    },
+    {
+      "index": 176,
+      "filename": "um-redmohawk.png",
+      "displayName": "Redmohawk",
+      "category": "Hair"
+    },
+    {
+      "index": 177,
+      "filename": "um-regularshades.png",
+      "displayName": "Regularshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 178,
+      "filename": "um-rosycheeks.png",
+      "displayName": "Rosycheeks",
+      "category": "Blemish"
+    },
+    {
+      "index": 179,
+      "filename": "um-shadowbeard.png",
+      "displayName": "Shadowbeard",
+      "category": "Facial Hair"
+    },
+    {
+      "index": 180,
+      "filename": "um-shavedhead.png",
+      "displayName": "Shavedhead",
+      "category": "Hair"
+    },
+    {
+      "index": 181,
+      "filename": "um-silverchain.png",
+      "displayName": "Silverchain",
+      "category": "Neck Accessory"
+    },
+    {
+      "index": 182,
+      "filename": "um-smallshades.png",
+      "displayName": "Smallshades",
+      "category": "Eyes"
+    },
+    {
+      "index": 183,
+      "filename": "um-smile.png",
+      "displayName": "Smile",
+      "category": "Mouth"
+    },
+    {
+      "index": 184,
+      "filename": "um-spots.png",
+      "displayName": "Spots",
+      "category": "Blemish"
+    },
+    {
+      "index": 185,
+      "filename": "um-straighthair.png",
+      "displayName": "Straighthair",
+      "category": "Hair"
+    },
+    {
+      "index": 186,
+      "filename": "um-straighthairblonde.png",
+      "displayName": "Straighthairblonde",
+      "category": "Hair"
+    },
+    {
+      "index": 187,
+      "filename": "um-straighthairdark.png",
+      "displayName": "Straighthairdark",
+      "category": "Hair"
+    },
+    {
+      "index": 188,
+      "filename": "um-stringyhair.png",
+      "displayName": "Stringyhair",
+      "category": "Hair"
+    },
+    {
+      "index": 189,
+      "filename": "um-tasslehat.png",
+      "displayName": "Tasslehat",
+      "category": "Hair"
+    },
+    {
+      "index": 190,
+      "filename": "um-tiara.png",
+      "displayName": "Tiara",
+      "category": "Hair"
+    },
+    {
+      "index": 191,
+      "filename": "um-tophat.png",
+      "displayName": "Tophat",
+      "category": "Hair"
+    },
+    {
+      "index": 192,
+      "filename": "um-vampirehair.png",
+      "displayName": "Vampirehair",
+      "category": "Hair"
+    },
+    {
+      "index": 193,
+      "filename": "um-vape.png",
+      "displayName": "Vape",
+      "category": "Mouth Prop"
+    },
+    {
+      "index": 194,
+      "filename": "um-vr.png",
+      "displayName": "VR",
+      "category": "Eyes"
+    },
+    {
+      "index": 195,
+      "filename": "um-weldinggoggles.png",
+      "displayName": "Weldinggoggles",
+      "category": "Eyes"
+    },
+    {
+      "index": 196,
+      "filename": "um-wildblonde.png",
+      "displayName": "Wildblonde",
+      "category": "Hair"
+    },
+    {
+      "index": 197,
+      "filename": "um-wildwhitehair.png",
+      "displayName": "Wildwhitehair",
+      "category": "Hair"
+    },
+    {
+      "index": 198,
+      "filename": "um-zombie.png",
+      "displayName": "Zombie",
+      "category": "Base"
+    }
+  ]
+}

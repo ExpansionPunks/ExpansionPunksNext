@@ -1,0 +1,802 @@
+{
+  "description": "Onchain trait ordering (index used in descriptor)",
+  "totalTraits": 199,
+  "traits": [
+    {
+      "index": 0,
+      "filename": "f-clownhairgreen.png"
+    },
+    {
+      "index": 1,
+      "filename": "f-crazyhair.png"
+    },
+    {
+      "index": 2,
+      "filename": "f-frumpyhair.png"
+    },
+    {
+      "index": 3,
+      "filename": "f-headband.png"
+    },
+    {
+      "index": 4,
+      "filename": "f-wildhair.png"
+    },
+    {
+      "index": 5,
+      "filename": "m-clownhairgreen.png"
+    },
+    {
+      "index": 6,
+      "filename": "m-crazyhair.png"
+    },
+    {
+      "index": 7,
+      "filename": "m-frumpyhair.png"
+    },
+    {
+      "index": 8,
+      "filename": "m-headband.png"
+    },
+    {
+      "index": 9,
+      "filename": "m-wildhair.png"
+    },
+    {
+      "index": 10,
+      "filename": "nbf-clownhairgreen.png"
+    },
+    {
+      "index": 11,
+      "filename": "nbf-crazyhair.png"
+    },
+    {
+      "index": 12,
+      "filename": "nbf-frumpyhair.png"
+    },
+    {
+      "index": 13,
+      "filename": "nbf-headband.png"
+    },
+    {
+      "index": 14,
+      "filename": "nbf-wildhair.png"
+    },
+    {
+      "index": 15,
+      "filename": "nbm-clownhairgreen.png"
+    },
+    {
+      "index": 16,
+      "filename": "nbm-crazyhair.png"
+    },
+    {
+      "index": 17,
+      "filename": "nbm-frumpyhair.png"
+    },
+    {
+      "index": 18,
+      "filename": "nbm-headband.png"
+    },
+    {
+      "index": 19,
+      "filename": "nbm-wildhair.png"
+    },
+    {
+      "index": 20,
+      "filename": "uf-3dglasses.png"
+    },
+    {
+      "index": 21,
+      "filename": "uf-albino.png"
+    },
+    {
+      "index": 22,
+      "filename": "uf-alien.png"
+    },
+    {
+      "index": 23,
+      "filename": "uf-ape.png"
+    },
+    {
+      "index": 24,
+      "filename": "uf-bandana.png"
+    },
+    {
+      "index": 25,
+      "filename": "uf-beanie.png"
+    },
+    {
+      "index": 26,
+      "filename": "uf-bigbeard.png"
+    },
+    {
+      "index": 27,
+      "filename": "uf-bigshades.png"
+    },
+    {
+      "index": 28,
+      "filename": "uf-blacklipstick.png"
+    },
+    {
+      "index": 29,
+      "filename": "uf-blondebob.png"
+    },
+    {
+      "index": 30,
+      "filename": "uf-blondeshort.png"
+    },
+    {
+      "index": 31,
+      "filename": "uf-blueeyeshadow.png"
+    },
+    {
+      "index": 32,
+      "filename": "uf-buckteeth.png"
+    },
+    {
+      "index": 33,
+      "filename": "uf-cap.png"
+    },
+    {
+      "index": 34,
+      "filename": "uf-capforward.png"
+    },
+    {
+      "index": 35,
+      "filename": "uf-chinstrap.png"
+    },
+    {
+      "index": 36,
+      "filename": "uf-choker.png"
+    },
+    {
+      "index": 37,
+      "filename": "uf-cigarette.png"
+    },
+    {
+      "index": 38,
+      "filename": "uf-classicshades.png"
+    },
+    {
+      "index": 39,
+      "filename": "uf-clowneyesblue.png"
+    },
+    {
+      "index": 40,
+      "filename": "uf-clowneyesgreen.png"
+    },
+    {
+      "index": 41,
+      "filename": "uf-clownnose.png"
+    },
+    {
+      "index": 42,
+      "filename": "uf-cowboyhat.png"
+    },
+    {
+      "index": 43,
+      "filename": "uf-dark.png"
+    },
+    {
+      "index": 44,
+      "filename": "uf-darkhair.png"
+    },
+    {
+      "index": 45,
+      "filename": "uf-do-rag.png"
+    },
+    {
+      "index": 46,
+      "filename": "uf-earring.png"
+    },
+    {
+      "index": 47,
+      "filename": "uf-eyemask.png"
+    },
+    {
+      "index": 48,
+      "filename": "uf-eyepatch.png"
+    },
+    {
+      "index": 49,
+      "filename": "uf-fedora.png"
+    },
+    {
+      "index": 50,
+      "filename": "uf-frontbeard.png"
+    },
+    {
+      "index": 51,
+      "filename": "uf-frontbearddark.png"
+    },
+    {
+      "index": 52,
+      "filename": "uf-frown.png"
+    },
+    {
+      "index": 53,
+      "filename": "uf-goat.png"
+    },
+    {
+      "index": 54,
+      "filename": "uf-goldchain.png"
+    },
+    {
+      "index": 55,
+      "filename": "uf-greeneyeshadow.png"
+    },
+    {
+      "index": 56,
+      "filename": "uf-halfshaved.png"
+    },
+    {
+      "index": 57,
+      "filename": "uf-handlebars.png"
+    },
+    {
+      "index": 58,
+      "filename": "uf-hoodie.png"
+    },
+    {
+      "index": 59,
+      "filename": "uf-hornedrimglasses.png"
+    },
+    {
+      "index": 60,
+      "filename": "uf-hotlipstick.png"
+    },
+    {
+      "index": 61,
+      "filename": "uf-knittedcap.png"
+    },
+    {
+      "index": 62,
+      "filename": "uf-light.png"
+    },
+    {
+      "index": 63,
+      "filename": "uf-luxuriousbeard.png"
+    },
+    {
+      "index": 64,
+      "filename": "uf-medicalmask.png"
+    },
+    {
+      "index": 65,
+      "filename": "uf-medium.png"
+    },
+    {
+      "index": 66,
+      "filename": "uf-messyhair.png"
+    },
+    {
+      "index": 67,
+      "filename": "uf-mohawk.png"
+    },
+    {
+      "index": 68,
+      "filename": "uf-mohawkdark.png"
+    },
+    {
+      "index": 69,
+      "filename": "uf-mohawkthin.png"
+    },
+    {
+      "index": 70,
+      "filename": "uf-mole.png"
+    },
+    {
+      "index": 71,
+      "filename": "uf-mustache.png"
+    },
+    {
+      "index": 72,
+      "filename": "uf-muttonchops.png"
+    },
+    {
+      "index": 73,
+      "filename": "uf-nerdglasses.png"
+    },
+    {
+      "index": 74,
+      "filename": "uf-nomouth.png"
+    },
+    {
+      "index": 75,
+      "filename": "uf-normalbeard.png"
+    },
+    {
+      "index": 76,
+      "filename": "uf-normalbeardblack.png"
+    },
+    {
+      "index": 77,
+      "filename": "uf-orangeside.png"
+    },
+    {
+      "index": 78,
+      "filename": "uf-peakspike.png"
+    },
+    {
+      "index": 79,
+      "filename": "uf-pigtails.png"
+    },
+    {
+      "index": 80,
+      "filename": "uf-pilothelmet.png"
+    },
+    {
+      "index": 81,
+      "filename": "uf-pinkwithhat.png"
+    },
+    {
+      "index": 82,
+      "filename": "uf-pipe.png"
+    },
+    {
+      "index": 83,
+      "filename": "uf-policecap.png"
+    },
+    {
+      "index": 84,
+      "filename": "uf-purpleeyeshadow.png"
+    },
+    {
+      "index": 85,
+      "filename": "uf-purplehair.png"
+    },
+    {
+      "index": 86,
+      "filename": "uf-purplelipstick.png"
+    },
+    {
+      "index": 87,
+      "filename": "uf-redmohawk.png"
+    },
+    {
+      "index": 88,
+      "filename": "uf-regularshades.png"
+    },
+    {
+      "index": 89,
+      "filename": "uf-rosycheeks.png"
+    },
+    {
+      "index": 90,
+      "filename": "uf-shadowbeard.png"
+    },
+    {
+      "index": 91,
+      "filename": "uf-shavedhead.png"
+    },
+    {
+      "index": 92,
+      "filename": "uf-silverchain.png"
+    },
+    {
+      "index": 93,
+      "filename": "uf-smallshades.png"
+    },
+    {
+      "index": 94,
+      "filename": "uf-smile.png"
+    },
+    {
+      "index": 95,
+      "filename": "uf-spots.png"
+    },
+    {
+      "index": 96,
+      "filename": "uf-straighthair.png"
+    },
+    {
+      "index": 97,
+      "filename": "uf-straighthairblonde.png"
+    },
+    {
+      "index": 98,
+      "filename": "uf-straighthairdark.png"
+    },
+    {
+      "index": 99,
+      "filename": "uf-stringyhair.png"
+    },
+    {
+      "index": 100,
+      "filename": "uf-tasslehat.png"
+    },
+    {
+      "index": 101,
+      "filename": "uf-tiara.png"
+    },
+    {
+      "index": 102,
+      "filename": "uf-tophat.png"
+    },
+    {
+      "index": 103,
+      "filename": "uf-vampirehair.png"
+    },
+    {
+      "index": 104,
+      "filename": "uf-vape.png"
+    },
+    {
+      "index": 105,
+      "filename": "uf-vr.png"
+    },
+    {
+      "index": 106,
+      "filename": "uf-weldinggoggles.png"
+    },
+    {
+      "index": 107,
+      "filename": "uf-wildblonde.png"
+    },
+    {
+      "index": 108,
+      "filename": "uf-wildwhitehair.png"
+    },
+    {
+      "index": 109,
+      "filename": "uf-zombie.png"
+    },
+    {
+      "index": 110,
+      "filename": "um-3dglasses.png"
+    },
+    {
+      "index": 111,
+      "filename": "um-albino.png"
+    },
+    {
+      "index": 112,
+      "filename": "um-alien.png"
+    },
+    {
+      "index": 113,
+      "filename": "um-ape.png"
+    },
+    {
+      "index": 114,
+      "filename": "um-bandana.png"
+    },
+    {
+      "index": 115,
+      "filename": "um-beanie.png"
+    },
+    {
+      "index": 116,
+      "filename": "um-bigbeard.png"
+    },
+    {
+      "index": 117,
+      "filename": "um-bigshades.png"
+    },
+    {
+      "index": 118,
+      "filename": "um-blacklipstick.png"
+    },
+    {
+      "index": 119,
+      "filename": "um-blondebob.png"
+    },
+    {
+      "index": 120,
+      "filename": "um-blondeshort.png"
+    },
+    {
+      "index": 121,
+      "filename": "um-blueeyeshadow.png"
+    },
+    {
+      "index": 122,
+      "filename": "um-buckteeth.png"
+    },
+    {
+      "index": 123,
+      "filename": "um-cap.png"
+    },
+    {
+      "index": 124,
+      "filename": "um-capforward.png"
+    },
+    {
+      "index": 125,
+      "filename": "um-chinstrap.png"
+    },
+    {
+      "index": 126,
+      "filename": "um-choker.png"
+    },
+    {
+      "index": 127,
+      "filename": "um-cigarette.png"
+    },
+    {
+      "index": 128,
+      "filename": "um-classicshades.png"
+    },
+    {
+      "index": 129,
+      "filename": "um-clowneyesblue.png"
+    },
+    {
+      "index": 130,
+      "filename": "um-clowneyesgreen.png"
+    },
+    {
+      "index": 131,
+      "filename": "um-clownnose.png"
+    },
+    {
+      "index": 132,
+      "filename": "um-cowboyhat.png"
+    },
+    {
+      "index": 133,
+      "filename": "um-dark.png"
+    },
+    {
+      "index": 134,
+      "filename": "um-darkhair.png"
+    },
+    {
+      "index": 135,
+      "filename": "um-do-rag.png"
+    },
+    {
+      "index": 136,
+      "filename": "um-earring.png"
+    },
+    {
+      "index": 137,
+      "filename": "um-eyemask.png"
+    },
+    {
+      "index": 138,
+      "filename": "um-eyepatch.png"
+    },
+    {
+      "index": 139,
+      "filename": "um-fedora.png"
+    },
+    {
+      "index": 140,
+      "filename": "um-frontbeard.png"
+    },
+    {
+      "index": 141,
+      "filename": "um-frontbearddark.png"
+    },
+    {
+      "index": 142,
+      "filename": "um-frown.png"
+    },
+    {
+      "index": 143,
+      "filename": "um-goat.png"
+    },
+    {
+      "index": 144,
+      "filename": "um-goldchain.png"
+    },
+    {
+      "index": 145,
+      "filename": "um-greeneyeshadow.png"
+    },
+    {
+      "index": 146,
+      "filename": "um-halfshaved.png"
+    },
+    {
+      "index": 147,
+      "filename": "um-handlebars.png"
+    },
+    {
+      "index": 148,
+      "filename": "um-hoodie.png"
+    },
+    {
+      "index": 149,
+      "filename": "um-hornedrimglasses.png"
+    },
+    {
+      "index": 150,
+      "filename": "um-hotlipstick.png"
+    },
+    {
+      "index": 151,
+      "filename": "um-knittedcap.png"
+    },
+    {
+      "index": 152,
+      "filename": "um-light.png"
+    },
+    {
+      "index": 153,
+      "filename": "um-luxuriousbeard.png"
+    },
+    {
+      "index": 154,
+      "filename": "um-medicalmask.png"
+    },
+    {
+      "index": 155,
+      "filename": "um-medium.png"
+    },
+    {
+      "index": 156,
+      "filename": "um-messyhair.png"
+    },
+    {
+      "index": 157,
+      "filename": "um-mohawk.png"
+    },
+    {
+      "index": 158,
+      "filename": "um-mohawkdark.png"
+    },
+    {
+      "index": 159,
+      "filename": "um-mohawkthin.png"
+    },
+    {
+      "index": 160,
+      "filename": "um-mole.png"
+    },
+    {
+      "index": 161,
+      "filename": "um-mustache.png"
+    },
+    {
+      "index": 162,
+      "filename": "um-muttonchops.png"
+    },
+    {
+      "index": 163,
+      "filename": "um-nerdglasses.png"
+    },
+    {
+      "index": 164,
+      "filename": "um-normalbeard.png"
+    },
+    {
+      "index": 165,
+      "filename": "um-normalbeardblack.png"
+    },
+    {
+      "index": 166,
+      "filename": "um-orangeside.png"
+    },
+    {
+      "index": 167,
+      "filename": "um-peakspike.png"
+    },
+    {
+      "index": 168,
+      "filename": "um-pigtails.png"
+    },
+    {
+      "index": 169,
+      "filename": "um-pilothelmet.png"
+    },
+    {
+      "index": 170,
+      "filename": "um-pinkwithhat.png"
+    },
+    {
+      "index": 171,
+      "filename": "um-pipe.png"
+    },
+    {
+      "index": 172,
+      "filename": "um-policecap.png"
+    },
+    {
+      "index": 173,
+      "filename": "um-purpleeyeshadow.png"
+    },
+    {
+      "index": 174,
+      "filename": "um-purplehair.png"
+    },
+    {
+      "index": 175,
+      "filename": "um-purplelipstick.png"
+    },
+    {
+      "index": 176,
+      "filename": "um-redmohawk.png"
+    },
+    {
+      "index": 177,
+      "filename": "um-regularshades.png"
+    },
+    {
+      "index": 178,
+      "filename": "um-rosycheeks.png"
+    },
+    {
+      "index": 179,
+      "filename": "um-shadowbeard.png"
+    },
+    {
+      "index": 180,
+      "filename": "um-shavedhead.png"
+    },
+    {
+      "index": 181,
+      "filename": "um-silverchain.png"
+    },
+    {
+      "index": 182,
+      "filename": "um-smallshades.png"
+    },
+    {
+      "index": 183,
+      "filename": "um-smile.png"
+    },
+    {
+      "index": 184,
+      "filename": "um-spots.png"
+    },
+    {
+      "index": 185,
+      "filename": "um-straighthair.png"
+    },
+    {
+      "index": 186,
+      "filename": "um-straighthairblonde.png"
+    },
+    {
+      "index": 187,
+      "filename": "um-straighthairdark.png"
+    },
+    {
+      "index": 188,
+      "filename": "um-stringyhair.png"
+    },
+    {
+      "index": 189,
+      "filename": "um-tasslehat.png"
+    },
+    {
+      "index": 190,
+      "filename": "um-tiara.png"
+    },
+    {
+      "index": 191,
+      "filename": "um-tophat.png"
+    },
+    {
+      "index": 192,
+      "filename": "um-vampirehair.png"
+    },
+    {
+      "index": 193,
+      "filename": "um-vape.png"
+    },
+    {
+      "index": 194,
+      "filename": "um-vr.png"
+    },
+    {
+      "index": 195,
+      "filename": "um-weldinggoggles.png"
+    },
+    {
+      "index": 196,
+      "filename": "um-wildblonde.png"
+    },
+    {
+      "index": 197,
+      "filename": "um-wildwhitehair.png"
+    },
+    {
+      "index": 198,
+      "filename": "um-zombie.png"
+    }
+  ]
+}
