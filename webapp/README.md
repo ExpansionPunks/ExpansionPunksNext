@@ -23,9 +23,10 @@ npm run lint
 | stage     | wallet | migration | chain    |
 |-----------|--------|-----------|----------|
 | `content` | off    | off       | â€”        |
-| `testnet` | on     | on        | Sepolia  |
+| `testnet` | gated* | gated*    | Sepolia  |
 | `mainnet` | on     | gated*    | Ethereum |
 
-*Mainnet migration stays gated until `NEXT_PUBLIC_MAINNET_MIGRATION_ADDRESS`
-is set. The site ships at `content`. See `.env.example` for all variables; no
-keys are committed.
+*Testnet requires every Sepolia contract address and its deployment block.
+Mainnet migration requires every mainnet contract address, its deployment
+block, a dedicated HTTPS RPC, and the public Merkle URL. The site ships at
+`content`. See `.env.example` for all variables; no keys are committed.

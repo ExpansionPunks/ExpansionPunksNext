@@ -1,42 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
+import type { Connector } from "wagmi";
+import type { WalletOption } from "@/lib/wallet-options";
+import { useWalletOptions } from "@/components/wallet/useWalletOptions";
+import { WalletPickerPopover } from "@/components/wallet/WalletPickerPopover";
 
 type WalletButtonProps = {
   appearance?: "header" | "panel";
 };
-
-let providerAnnounced = false;
-
-function subscribeToInjectedWallet(onStoreChange: () => void) {
-  const handleProviderAnnouncement = () => {
-    providerAnnounced = true;
-    onStoreChange();
-  };
-
-  window.addEventListener("eip6963:announceProvider", handleProviderAnnouncement);
-  window.dispatchEvent(new Event("eip6963:requestProvider"));
-
-  return () => {
-    window.removeEventListener("eip6963:announceProvider", handleProviderAnnouncement);
-  };
-}
-
-function hasInjectedWallet() {
-  return providerAnnounced || "ethereum" in window;
-}
-
-function assumeWalletDuringServerRender() {
-  return true;
-}
-
-function walletName(name: string) {
-  if (name.toLowerCase().includes("rabby")) return "Rabby Wallet";
-  if (name === "Injected") return "Browser wallet";
-  return name;
-}
 
 function describeConnectionError(error: unknown) {
   const message = error instanceof Error ? error.message.toLowerCase() : "";
@@ -53,21 +27,15 @@ function describeConnectionError(error: unknown) {
 }
 
 export function WalletButton({ appearance = "header" }: WalletButtonProps) {
-  const [requestFeedback, setRequestFeedback] = useState<string | null>(null);
-  const injectedWalletAvailable = useSyncExternalStore(
-    subscribeToInjectedWallet,
-    hasInjectedWallet,
-    assumeWalletDuringServerRender,
-  );
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [pendingId, setPendingId] = useState<string | null>(null);
+  const [errorId, setErrorId] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
   const { address, isConnected } = useAccount();
-  const { connectAsync, connectors, isPending } = useConnect();
+  const { connectAsync, isPending } = useConnect();
   const { disconnect, isPending: isDisconnecting } = useDisconnect();
-  const walletOptions = connectors.filter(
-    (connector, index) =>
-      connectors.findIndex((other) => walletName(other.name) === walletName(connector.name)) === index,
-  );
-  const providerConnector = walletOptions.find((connector) => connector.name !== "Injected");
-  const defaultConnector = providerConnector ?? walletOptions[0];
+  const { options, injectedWalletAvailable } = useWalletOptions();
 
   if (isConnected && address && appearance === "header") {
     return (
@@ -89,22 +57,34 @@ export function WalletButton({ appearance = "header" }: WalletButtonProps) {
 
   const noInjectedWallet = !injectedWalletAvailable && !isConnected;
 
-  const connectWallet = async (connector: (typeof walletOptions)[number]) => {
-    setRequestFeedback(`Complete the ${walletName(connector.name)} request in your wallet.`);
+  const connectTo = async (option: WalletOption) => {
+    setPendingId(option.id);
+    setErrorId(null);
+    setErrorMessage(null);
 
     try {
-      await connectAsync({ connector });
-      setRequestFeedback(null);
+      // option.connector is always a real wagmi Connector at runtime; WalletConnectorLike
+      // is a minimal subset type used for dedup logic, so we cast to satisfy connectAsync.
+      await connectAsync({ connector: option.connector as unknown as Connector });
+      setPickerOpen(false);
     } catch (connectionError) {
-      setRequestFeedback(describeConnectionError(connectionError));
+      // Surface the underlying error for debugging; UI text is intentionally generic.
+      console.error("[WalletButton] connect failed", connectionError);
+      setErrorId(option.id);
+      setErrorMessage(describeConnectionError(connectionError));
+    } finally {
+      setPendingId(null);
     }
   };
 
   const beginConnection = () => {
-    setRequestFeedback(null);
+    setErrorId(null);
+    setErrorMessage(null);
 
-    if (defaultConnector) {
-      void connectWallet(defaultConnector);
+    if (options.length === 1) {
+      void connectTo(options[0]);
+    } else if (options.length > 1) {
+      setPickerOpen(true);
     }
   };
 
@@ -113,18 +93,34 @@ export function WalletButton({ appearance = "header" }: WalletButtonProps) {
       <button
         className={appearance === "header" ? "wallet-action" : "button dark wallet-panel-button"}
         type="button"
-        disabled={isPending || isDisconnecting || walletOptions.length === 0 || noInjectedWallet}
+        disabled={isPending || isDisconnecting || options.length === 0 || noInjectedWallet}
         onClick={beginConnection}
       >
         {noInjectedWallet ? "No wallet found" : isPending ? "Connecting..." : "Connect wallet"}
       </button>
+      {pickerOpen && options.length > 1 ? (
+        <WalletPickerPopover
+          options={options}
+          pendingId={pendingId}
+          errorId={errorId}
+          errorMessage={errorMessage}
+          onSelect={connectTo}
+          onClose={() => {
+            // Clear any per-wallet error on dismiss so it doesn't reappear in the
+            // global feedback slot under the collapsed button.
+            setPickerOpen(false);
+            setErrorId(null);
+            setErrorMessage(null);
+          }}
+        />
+      ) : null}
       {noInjectedWallet ? (
         <span className="wallet-feedback" role="status">
           Open in a browser with MetaMask or another wallet extension.
         </span>
-      ) : requestFeedback && !isConnected ? (
+      ) : errorMessage && !pickerOpen && !isConnected ? (
         <span className="wallet-feedback" role="status">
-          {requestFeedback}
+          {errorMessage}
         </span>
       ) : null}
     </div>

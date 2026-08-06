@@ -61,7 +61,7 @@ export function ExecutionMap() {
 
         <TimelineNode className="origin tc2" title="XIPs pass" copy="XIP 24 and 25 approved." />
 
-        <TimelineNode className="done migration-node tc3 tr1" title="Testnet build" copy="Sepolia build is live." />
+        <TimelineNode className="done migration-node tc3 tr1" title="Initial testnet" copy="Artwork and migration flow rehearsed." />
         <TimelineNode
           className="done migration-node tc4 tr1"
           title="Verify 10k"

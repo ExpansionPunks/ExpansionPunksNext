@@ -6,7 +6,7 @@ import { mainnet, sepolia } from "viem/chains";
 // the content-stage site. We read whichever network has a Renderer deployed —
 // Sepolia today, Ethereum once NEXT_PUBLIC_MAINNET_RENDERER_ADDRESS is set.
 
-const SEPOLIA_RENDERER: Address = "0x243C1Ca2d976Eef9fec23675F700814745299E68";
+const SEPOLIA_RENDERER: Address = "0xF8d64610215E40F79dee61d352aB1BcC8749E700";
 
 // IPFS image the live collection references (project Pinata gateway). The
 // browser reaches it through the same-origin proxy route /verify/ipfs/{id}
@@ -30,10 +30,12 @@ function normalizeAddress(value: string | undefined): Address | undefined {
 }
 
 const mainnetRenderer = normalizeAddress(process.env.NEXT_PUBLIC_MAINNET_RENDERER_ADDRESS);
+const sepoliaRenderer =
+  normalizeAddress(process.env.NEXT_PUBLIC_SEPOLIA_RENDERER) ?? SEPOLIA_RENDERER;
 
 export const verifyTarget = mainnetRenderer
   ? { chain: mainnet, renderer: mainnetRenderer, label: "Ethereum mainnet" }
-  : { chain: sepolia, renderer: SEPOLIA_RENDERER, label: "Sepolia testnet" };
+  : { chain: sepolia, renderer: sepoliaRenderer, label: "Sepolia testnet" };
 
 export const rendererAbi = [
   {

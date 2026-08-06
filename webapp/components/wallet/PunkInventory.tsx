@@ -225,7 +225,7 @@ function TokenCard({ tokenId, migrate }: { tokenId: bigint; migrate: boolean }) 
       <Image src={`/art/punk/${id}`} width={126} height={126} alt={`ExpansionPunk #${id}`} />
       <strong>#{id}</strong>
       {migrate ? (
-        <Link href={`/migration?punk=${id}`}>Migrate</Link>
+        <Link href={`/holder?punk=${id}`}>Migrate</Link>
       ) : (
         <span>Onchain</span>
       )}

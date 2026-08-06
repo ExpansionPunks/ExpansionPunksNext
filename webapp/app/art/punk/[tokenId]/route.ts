@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { IPFS_GATEWAY, IPFS_IMAGE_CID } from "@/lib/verify-config";
 
 export const runtime = "nodejs";
 
@@ -33,6 +34,20 @@ export async function GET(
       },
     });
   } catch {
-    return new Response("Artwork unavailable", { status: 404 });
+    try {
+      const upstream = await fetch(`${IPFS_GATEWAY}/${IPFS_IMAGE_CID}/punk${id}.png`, {
+        next: { revalidate: false },
+      });
+      if (!upstream.ok) throw new Error("Canonical artwork unavailable");
+
+      return new Response(await upstream.arrayBuffer(), {
+        headers: {
+          "Cache-Control": "public, max-age=31536000, immutable",
+          "Content-Type": "image/png",
+        },
+      });
+    } catch {
+      return new Response("Artwork unavailable", { status: 502 });
+    }
   }
 }

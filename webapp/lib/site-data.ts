@@ -68,8 +68,8 @@ export const punkTypes = [
 
 export const executionStages = [
   { name: "Approved", detail: "XIPs passed", status: "complete" },
-  { name: "Verify 10k", detail: "We are here", status: "active" },
-  { name: "Preflight", detail: "Review", status: "open" },
+  { name: "Verify 10k", detail: "All matched", status: "complete" },
+  { name: "Preflight", detail: "We are here", status: "active" },
   { name: "Launch", detail: "Migration begins", status: "open" },
   { name: "Wind-down", detail: "Rewards + grants", status: "open" },
 ] as const;

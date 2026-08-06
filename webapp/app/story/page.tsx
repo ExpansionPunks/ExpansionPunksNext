@@ -151,9 +151,10 @@ export default function StoryPage() {
         <p>
           Migration is burn-to-mint. You retire your legacy xPunk and receive the
           same-numbered punk from the new contract, with the art rendered
-          straight from Ethereum. It is not live yet. We are verifying all 10,000
-          renders first, and the public app currently runs against a Sepolia
-          rehearsal. Verify first, migrate second.
+          straight from Ethereum. It is not live yet. All 10,000 artworks were
+          verified against the Sepolia renderer. The public app stays content-only
+          while the remediated contracts complete a fresh rehearsal and mainnet
+          preflight.
         </p>
         <p>
           The wind-down turns what is left of the treasury into a final program:

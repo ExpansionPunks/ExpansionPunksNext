@@ -16,7 +16,8 @@ yarn-debug.log*
 .pnpm-debug.log*
 
 # env files â€” never commit secrets
-.env*.local
+.env*
+!.env.example
 
 # typescript
 *.tsbuildinfo

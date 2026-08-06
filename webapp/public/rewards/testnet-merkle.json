@@ -1,0 +1,23 @@
+{
+  "format": "keccak256(abi.encodePacked(uint256 chainId, address, uint256))",
+  "sortPairs": true,
+  "root": "0xa68e91cf287254eba9e0571d7ed2694c8e55ea95b4f72d656e90fc6f3a473160",
+  "poolWei": "15000000000000000",
+  "leafCount": 2,
+  "leaves": [
+    {
+      "address": "0x6D8dEC3fD68D94a7189A98346EA52B4D32e00012",
+      "amountWei": "10000000000000000",
+      "proof": [
+        "0x5392c84709d3a790879962b4ddeea982d24fe7efda4f461d21485cf230f382fb"
+      ]
+    },
+    {
+      "address": "0x9A62b75708c3ab96aa52b5a624157FdaCf2248a0",
+      "amountWei": "5000000000000000",
+      "proof": [
+        "0x963499d8f2c8f9d18c6fba6d80707bb361833dd7a66bb547635b717f602a7ca2"
+      ]
+    }
+  ]
+}

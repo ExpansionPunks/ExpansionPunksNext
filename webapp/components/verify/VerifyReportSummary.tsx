@@ -6,7 +6,7 @@ const stats = [
   {
     label: "Visually identical",
     value: verifyResult.rounding.toLocaleString(),
-    note: `alpha rounding ≤${verifyResult.tolerancePerChannel}/channel`,
+    note: `alpha rounding <=${verifyResult.tolerancePerChannel}/channel`,
   },
   { label: "Structural differences", value: verifyResult.structural.toLocaleString() },
 ];
@@ -34,10 +34,9 @@ export function VerifyReportSummary() {
         </p>
 
         <p className="verify-caveat">
-          We ran this against the {verifyResult.network} Renderer, because mainnet isn&apos;t
-          deployed yet. The trait data is byte-identical across networks, so this is the same
-          art mainnet will serve — we re-run the check against mainnet once the contracts are
-          live.
+          This report records the pinned {verifyResult.network} rehearsal from {verifyResult.date}.
+          The deployment evidence package will include a fresh run against the immutable mainnet
+          Renderer before public launch.
         </p>
 
         <div className="verify-how">
@@ -45,11 +44,11 @@ export function VerifyReportSummary() {
           <ol>
             <li>
               We read a punk&apos;s image straight from the onchain Renderer contract and
-              rasterize it to a 24×24 grid.
+              rasterize it to a 24x24 grid.
             </li>
             <li>
               We fetch the original image the collection has always referenced on IPFS and
-              downscale it 504→24 — an exact ×21 factor, so there&apos;s no resampling
+              downscale it 504 to 24, an exact 21x factor, so there&apos;s no resampling
               guesswork.
             </li>
             <li>

@@ -5,9 +5,10 @@ import { PunkReformCanvas } from "@/components/reform/PunkReformCanvas";
 import { morphPool } from "@/lib/site-data";
 
 const MORPH_SEQUENCE_LENGTH = 6;
+const INITIAL_SEQUENCE = morphPool.slice(0, MORPH_SEQUENCE_LENGTH);
 
 export function HeaderMorphPunk() {
-  const [sequence, setSequence] = useState(() => randomTokenSequence(MORPH_SEQUENCE_LENGTH));
+  const [sequence, setSequence] = useState<number[]>(INITIAL_SEQUENCE);
   const continueWithRandomPunks = useCallback((visibleTokenId: number) => {
     setSequence(randomTokenSequence(MORPH_SEQUENCE_LENGTH, visibleTokenId));
   }, []);

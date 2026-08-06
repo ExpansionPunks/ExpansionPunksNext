@@ -1,35 +1,31 @@
 import type { Address } from "viem";
 import { mainnet, sepolia } from "wagmi/chains";
 
-// Single source of truth for the deploy stage. One env var drives everything:
-//   NEXT_PUBLIC_SITE_STAGE = content | testnet | mainnet   (default: content)
-// Downstream config (chain, contracts, walletEnabled, migrationEnabled) is
-// derived here so no contradictory combination is representable.
-
+// One deploy stage drives chain, contracts, wallet, and migration availability.
 export type SiteStage = "content" | "testnet" | "mainnet";
 
 export type CollectionSource =
-  | { strategy: "events"; address: Address; fromBlock: bigint }
+  | { strategy: "events"; address: Address; fromBlock: bigint; snapshotUrl?: string }
   | { strategy: "enumerable"; address: Address };
 
 export type StageConfig = {
   stage: SiteStage;
   chainId: number;
   chainLabel: string;
+  explorerBaseUrl: string;
   walletEnabled: boolean;
   migrationEnabled: boolean;
   legacy?: CollectionSource;
   current?: CollectionSource;
+  rewards?: Address;
+  rewardsMerkleUrl?: string;
+  renderer?: Address;
 };
 
-// Fixed, public contract addresses (not secrets, rarely change).
-const SEPOLIA_LEGACY: Address = "0x6C00D23a03Fe18e873963f4DCCFD48cAcCbA9Fd7";
-const SEPOLIA_CURRENT: Address = "0x2Fa51d5760192D367ef77699a01e0e780B918567";
-const SEPOLIA_FROM_BLOCK = BigInt(10893048);
 const MAINNET_LEGACY: Address = "0x0d0167a823c6619d430b1a96ad85b888bcf97c37";
 
-function readStage(): SiteStage {
-  const raw = process.env.NEXT_PUBLIC_SITE_STAGE;
+function readStage(env: NodeJS.ProcessEnv): SiteStage {
+  const raw = env.NEXT_PUBLIC_SITE_STAGE;
   return raw === "testnet" || raw === "mainnet" ? raw : "content";
 }
 
@@ -37,54 +33,110 @@ function normalizeAddress(value: string | undefined): Address | undefined {
   return value && /^0x[0-9a-fA-F]{40}$/.test(value) ? (value as Address) : undefined;
 }
 
-function readMainnetFromBlock(): bigint {
-  const raw = process.env.NEXT_PUBLIC_MAINNET_FROM_BLOCK;
-  if (!raw) return BigInt(0);
+function readBlock(value: string | undefined, fallback = BigInt(0)): bigint {
+  if (!value) return fallback;
   try {
-    return BigInt(raw);
+    return BigInt(value);
   } catch {
-    return BigInt(0);
+    return fallback;
   }
 }
 
-function resolveStageConfig(): StageConfig {
-  const stage = readStage();
+function readPositiveBlock(value: string | undefined): bigint | undefined {
+  const block = readBlock(value);
+  return block > BigInt(0) ? block : undefined;
+}
+
+function readHttpsUrl(value: string | undefined): string | undefined {
+  if (!value) return undefined;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" ? value : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+export function resolveStageConfig(env: NodeJS.ProcessEnv = process.env): StageConfig {
+  const stage = readStage(env);
 
   if (stage === "testnet") {
+    const legacyAddress = normalizeAddress(env.NEXT_PUBLIC_SEPOLIA_LEGACY);
+    const currentAddress = normalizeAddress(env.NEXT_PUBLIC_SEPOLIA_CURRENT);
+    const rewards = normalizeAddress(env.NEXT_PUBLIC_SEPOLIA_REWARDS);
+    const renderer = normalizeAddress(env.NEXT_PUBLIC_SEPOLIA_RENDERER);
+    const fromBlock = readPositiveBlock(env.NEXT_PUBLIC_SEPOLIA_FROM_BLOCK);
+    const rehearsalReady = Boolean(
+      legacyAddress && currentAddress && rewards && renderer && fromBlock,
+    );
+    const legacy: CollectionSource | undefined = legacyAddress && fromBlock
+      ? {
+          strategy: "events",
+          address: legacyAddress,
+          fromBlock,
+          snapshotUrl: "/inventory/sepolia.json",
+        }
+      : undefined;
+    const current: CollectionSource | undefined = currentAddress && fromBlock
+      ? {
+          strategy: "events",
+          address: currentAddress,
+          fromBlock,
+          snapshotUrl: "/inventory/sepolia.json",
+        }
+      : undefined;
+
     return {
       stage,
       chainId: sepolia.id,
       chainLabel: "Sepolia",
-      walletEnabled: true,
-      migrationEnabled: true,
-      legacy: { strategy: "events", address: SEPOLIA_LEGACY, fromBlock: SEPOLIA_FROM_BLOCK },
-      current: { strategy: "events", address: SEPOLIA_CURRENT, fromBlock: SEPOLIA_FROM_BLOCK },
+      explorerBaseUrl: "https://sepolia.etherscan.io",
+      walletEnabled: rehearsalReady,
+      migrationEnabled: rehearsalReady,
+      legacy,
+      current,
+      rewards,
+      rewardsMerkleUrl: rehearsalReady ? "/rewards/testnet-merkle.json" : undefined,
+      renderer,
     };
   }
-
   if (stage === "mainnet") {
-    const currentAddress = normalizeAddress(process.env.NEXT_PUBLIC_MAINNET_MIGRATION_ADDRESS);
-    const current: CollectionSource | undefined = currentAddress
-      ? { strategy: "events", address: currentAddress, fromBlock: readMainnetFromBlock() }
+    const currentAddress = normalizeAddress(
+      env.NEXT_PUBLIC_MAINNET_MIGRATION_ADDRESS,
+    );
+    const fromBlock = readPositiveBlock(env.NEXT_PUBLIC_MAINNET_FROM_BLOCK);
+    const current: CollectionSource | undefined = currentAddress && fromBlock
+      ? {
+          strategy: "events",
+          address: currentAddress,
+          fromBlock,
+        }
       : undefined;
+    const rewards = normalizeAddress(env.NEXT_PUBLIC_MAINNET_REWARDS);
+    const renderer = normalizeAddress(env.NEXT_PUBLIC_MAINNET_RENDERER_ADDRESS);
+    const rewardsMerkleUrl = readHttpsUrl(env.NEXT_PUBLIC_MAINNET_MERKLE_URL);
+    const rpcReady = Boolean(readHttpsUrl(env.NEXT_PUBLIC_MAINNET_RPC_URL));
 
     return {
       stage,
       chainId: mainnet.id,
       chainLabel: "Ethereum",
+      explorerBaseUrl: "https://etherscan.io",
       walletEnabled: true,
-      // Stays gated until a real mainnet migration contract is configured.
-      migrationEnabled: Boolean(current),
+      migrationEnabled: Boolean(current && rewards && renderer && rewardsMerkleUrl && rpcReady),
       legacy: { strategy: "enumerable", address: MAINNET_LEGACY },
       current,
+      rewards,
+      rewardsMerkleUrl,
+      renderer,
     };
   }
 
-  // content: narrative-only public site, no wallet or contracts.
   return {
     stage,
     chainId: mainnet.id,
     chainLabel: "Ethereum",
+    explorerBaseUrl: "https://etherscan.io",
     walletEnabled: false,
     migrationEnabled: false,
   };
